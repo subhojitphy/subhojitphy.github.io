@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name — Researcher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #1a1a2e;
+            --paper: #f8f7f4;
+            --accent: #2d5a7b;
+            --accent-light: #3a7ca5;
+            --muted: #6b7280;
+            --border: #e2e0db;
+            --card-bg: #ffffff;
+            --highlight: #e8f0f6;
+            --serif: 'Instrument Serif', Georgia, serif;
+            --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--sans);
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.7;
+            font-weight: 400;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(248, 247, 244, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            transition: box-shadow 0.3s;
+        }
+        nav.scrolled { box-shadow: 0 1px 12px rgba(0,0,0,0.06); }
+        .nav-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+        .nav-name {
+            font-family: var(--serif);
+            font-size: 1.3rem;
+            color: var(--ink);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.88rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 1.5px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* ── HAMBURGER ── */
+        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+        .hamburger span {
+            display: block; width: 22px; height: 2px;
+            background: var(--ink); margin: 5px 0;
+            transition: all 0.3s;
+        }
+
+        /* ── MAIN LAYOUT ── */
+        main { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
+
+        /* ── HERO / ABOUT ── */
+        .hero {
+            padding-top: 120px;
+            padding-bottom: 4rem;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 3rem;
+            align-items: start;
+            animation: fadeUp 0.8s ease-out;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-photo {
+            width: 200px; height: 200px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 3px solid var(--border);
+            /* Replace src with your photo */
+            background: linear-gradient(135deg, var(--accent-light), var(--accent));
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 3rem; font-family: var(--serif);
+        }
+        .hero-text h1 {
+            font-family: var(--serif);
+            font-size: 2.8rem;
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.4rem;
+        }
+        .hero-text .title {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        .hero-text .affiliation {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
+        .hero-text .bio {
+            font-size: 1.02rem;
+            color: #3a3a4a;
+            max-width: 560px;
+        }
+        .hero-links {
+            margin-top: 1.4rem;
+            display: flex; gap: 1rem; flex-wrap: wrap;
+        }
+        .hero-links a {
+            display: inline-flex;
+            align-items: center; gap: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--accent);
+            padding: 6px 14px;
+            border: 1px solid var(--accent);
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .hero-links a:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* ── SECTIONS ── */
+        section { padding: 3.5rem 0; }
+        .section-title {
+            font-family: var(--serif);
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.02em;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 40px; height: 2.5px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        .section-subtitle {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            margin-top: 0.5rem;
+        }
+        .divider {
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+
+        /* ── RESEARCH INTERESTS ── */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2rem;
+        }
+        .research-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.6rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .research-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+        .research-card h3 {
+            font-family: var(--serif);
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+        .research-card p {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+        .research-icon {
+            font-size: 1.6rem;
+            margin-bottom: 0.7rem;
+            display: block;
+        }
+
+        /* ── PUBLICATIONS ── */
+        .pub-year {
+            font-family: var(--mono);
+            font-size: 0.82rem;
+            color: var(--accent);
+            letter-spacing: 0.04em;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .pub-year:first-child { margin-top: 0; }
+        .pub-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+        .pub-item:last-child { border-bottom: none; }
+        .pub-title {
+            font-weight: 600;
+            font-size: 0.98rem;
+            line-height: 1.5;
+            color: var(--ink);
+        }
+        .pub-authors {
+            font-size: 0.88rem;
+            color: var(--muted);
+            margin-top: 0.2rem;
+        }
+        .pub-authors strong { color: var(--ink); font-weight: 600; }
+        .pub-venue {
+            font-size: 0.86rem;
+            color: var(--accent);
+            font-style: italic;
+            margin-top: 0.15rem;
+        }
+        .pub-links {
+            margin-top: 0.4rem;
+            display: flex; gap: 0.7rem;
+        }
+        .pub-links a {
+            font-size: 0.78rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: var(--accent);
+            padding: 2px 8px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: all 0.2s;
+            font-family: var(--mono);
+        }
+        .pub-links a:hover {
+            background: var(--highlight);
+            border-color: var(--accent);
+        }
+
+        /* ── NEWS / UPDATES ── */
+        .news-list { list-style: none; }
+        .news-item {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 1rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+        .news-date {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: var(--muted);
+            padding-top: 2px;
+        }
+        .news-content { font-size: 0.95rem; }
+        .news-content a { color: var(--accent); }
+
+        /* ── CV SECTION ── */
+        .cv-download {
+            display: inline-flex;
+            align-items: center; gap: 8px;
+            text-decoration: none;
+            background: var(--accent);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .cv-download:hover {
+            background: var(--accent-light);
+            transform: translateY(-1px);
+        }
+
+        /* ── CONTACT ── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .contact-info p {
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+        }
+        .contact-info a { color: var(--accent); text-decoration: none; }
+        .contact-info a:hover { text-decoration: underline; }
+        .contact-label {
+            font-weight: 600;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--muted);
+            margin-bottom: 0.2rem;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            font-size: 0.82rem;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+
+        /* ── FADE-IN ON SCROLL ── */
+        .fade-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            .hero-photo { margin: 0 auto; width: 150px; height: 150px; }
+            .hero-text .bio { max-width: 100%; }
+            .hero-links { justify-content: center; }
+            .nav-links { 
+                display: none; 
+                position: absolute;
+                top: 60px; left: 0; right: 0;
+                background: rgba(248, 247, 244, 0.98);
+                backdrop-filter: blur(12px);
+                flex-direction: column;
+                padding: 1.5rem 2rem;
+                gap: 1rem;
+                border-bottom: 1px solid var(--border);
+            }
+            .nav-links.open { display: flex; }
+            .hamburger { display: block; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .hero-text h1 { font-size: 2.1rem; }
+            .news-item { grid-template-columns: 1fr; gap: 0.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ════════════ NAVIGATION ════════════ -->
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="#about" class="nav-name">Your Name</a>
+        <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="#news">News</a>
+            <a href="#cv">CV</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ════════════ HERO / ABOUT ════════════ -->
+<main>
+    <section id="about" class="hero">
+        <!-- REPLACE: Add your photo as <img src="photo.jpg" class="hero-photo"> -->
+        <div class="hero-photo" aria-label="Your photo placeholder">YN</div>
+
+        <div class="hero-text">
+            <h1>Your Name</h1>
+            <!-- REPLACE: Your title -->
+            <div class="title">Ph.D. Candidate / Postdoctoral Researcher / Assistant Professor</div>
+            <!-- REPLACE: Your affiliation -->
+            <div class="affiliation">Department of _____, University of _____</div>
+            <!-- REPLACE: Your bio (2-4 sentences) -->
+            <p class="bio">
+                I am a researcher in <strong>[your field]</strong> at [your institution]. 
+                My work focuses on [brief description of research]. 
+                I am particularly interested in [specific topics]. 
+                Previously, I obtained my Ph.D. from [university] in [year].
+            </p>
+            <!-- REPLACE: Your links -->
+            <div class="hero-links">
+                <a href="mailto:your.email@university.edu">✉ Email</a>
+                <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">🎓 Google Scholar</a>
+                <a href="https://github.com/yourusername" target="_blank">⌨ GitHub</a>
+                <a href="https://orcid.org/0000-0000-0000-0000" target="_blank">🆔 ORCID</a>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ════════════ RESEARCH ════════════ -->
+    <section id="research" class="fade-section">
+        <h2 class="section-title">Research</h2>
+        <p class="section-subtitle">Key areas and ongoing projects</p>
+
+        <div class="research-grid">
+            <!-- REPLACE: Add your research areas -->
+            <div class="research-card">
+                <span class="research-icon">🔬</span>
+                <h3>Research Area 1</h3>
+                <p>Brief description of this research area and what problems you are solving. Add 2-3 sentences here.</p>
+            </div>
+            <div class="research-card">
+                <span class="research-icon">🧠</span>
+                <h3>Research Area 2</h3>
+                <p>Brief description of another research direction. Mention methods, applications, or key findings.</p>
+            </div>
+            <div class="research-card">
+                <span class="research-icon">📊</span>
+                <h3>Research Area 3</h3>
+                <p>Description of a third area. Feel free to add or remove cards as needed.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ════════════ PUBLICATIONS ════════════ -->
+    <section id="publications" class="fade-section">
+        <h2 class="section-title">Publications</h2>
+        <p class="section-subtitle">Selected papers — <a href="https://scholar.google.com/" target="_blank" style="color:var(--accent)">Full list on Google Scholar →</a></p>
+
+        <!-- REPLACE: Add your publications grouped by year -->
+        <div class="pub-year">2025</div>
+
+        <div class="pub-item">
+            <div class="pub-title">Title of Your Paper Goes Here</div>
+            <div class="pub-authors"><strong>Your Name</strong>, Co-Author One, Co-Author Two</div>
+            <div class="pub-venue">Journal / Conference Name, Volume(Issue), Pages</div>
+            <div class="pub-links">
+                <a href="#">PDF</a>
+                <a href="#">DOI</a>
+                <a href="#">Code</a>
+            </div>
+        </div>
+
+        <div class="pub-item">
+            <div class="pub-title">Another Paper Title With a Longer Name for Demonstration</div>
+            <div class="pub-authors">Co-Author One, <strong>Your Name</strong>, Co-Author Three</div>
+            <div class="pub-venue">Conference on Something Important (COSI 2025)</div>
+            <div class="pub-links">
+                <a href="#">PDF</a>
+                <a href="#">arXiv</a>
+            </div>
+        </div>
+
+        <div class="pub-year">2024</div>
+
+        <div class="pub-item">
+            <div class="pub-title">An Earlier Paper You Published</div>
+            <div class="pub-authors"><strong>Your Name</strong>, Co-Author Four</div>
+            <div class="pub-venue">Nature / Science / IEEE / ACM etc.</div>
+            <div class="pub-links">
+                <a href="#">PDF</a>
+                <a href="#">DOI</a>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ════════════ NEWS ════════════ -->
+    <section id="news" class="fade-section">
+        <h2 class="section-title">News</h2>
+        <p class="section-subtitle">Recent updates and announcements</p>
+
+        <ul class="news-list">
+            <!-- REPLACE: Add your news items -->
+            <li class="news-item">
+                <span class="news-date">Feb 2026</span>
+                <span class="news-content">🎉 Paper accepted at [Conference/Journal Name]!</span>
+            </li>
+            <li class="news-item">
+                <span class="news-date">Jan 2026</span>
+                <span class="news-content">Gave an invited talk at [Event Name] on [Topic].</span>
+            </li>
+            <li class="news-item">
+                <span class="news-date">Dec 2025</span>
+                <span class="news-content">Released code for our <a href="#">project name</a> on GitHub.</span>
+            </li>
+            <li class="news-item">
+                <span class="news-date">Sep 2025</span>
+                <span class="news-content">Started as [position] at [Institution].</span>
+            </li>
+        </ul>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ════════════ CV ════════════ -->
+    <section id="cv" class="fade-section">
+        <h2 class="section-title">Curriculum Vitae</h2>
+        <p class="section-subtitle">Download my full CV below</p>
+        <!-- REPLACE: Link to your CV PDF file -->
+        <a href="cv.pdf" class="cv-download" target="_blank">
+            📄 Download CV (PDF)
+        </a>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ════════════ CONTACT ════════════ -->
+    <section id="contact" class="fade-section">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">Feel free to reach out</p>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-label">Email</div>
+                <!-- REPLACE -->
+                <p><a href="mailto:your.email@university.edu">your.email@university.edu</a></p>
+
+                <div class="contact-label" style="margin-top:1.2rem;">Office</div>
+                <!-- REPLACE -->
+                <p>Room 123, Building Name<br>University of _____<br>City, Country</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-label">Profiles</div>
+                <!-- REPLACE: Your academic profile links -->
+                <p><a href="#">Google Scholar</a></p>
+                <p><a href="#">GitHub</a></p>
+                <p><a href="#">ORCID</a></p>
+                <p><a href="#">LinkedIn</a></p>
+                <p><a href="#">Twitter / X</a></p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer>
+    &copy; 2026 Your Name. Built with care. Hosted on <a href="https://pages.github.com" style="color:var(--accent)">GitHub Pages</a>.
+</footer>
+
+<!-- ════════════ SCRIPTS ════════════ -->
+<script>
+    // Navbar shadow on scroll
+    window.addEventListener('scroll', () => {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.remove('open');
+        });
+    });
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-section').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
