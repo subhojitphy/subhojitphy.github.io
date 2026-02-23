@@ -21,6 +21,8 @@
             --card-bg: #ffffff;
             --highlight: #eff6ff;
             --warm: #fef7ed;
+            --green-bg: #f0fdf4;
+            --green-border: #86efac;
             --serif: 'Playfair Display', Georgia, serif;
             --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
             --mono: 'JetBrains Mono', monospace;
@@ -42,484 +44,253 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* NAV */
+        /* ═══ NAV ═══ */
         nav {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 100;
-            background: rgba(250, 250, 249, 0.88);
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(250,250,249,0.88);
             backdrop-filter: blur(16px) saturate(1.2);
             -webkit-backdrop-filter: blur(16px) saturate(1.2);
             border-bottom: 1px solid transparent;
             transition: all 0.3s ease;
         }
-        nav.scrolled {
-            border-bottom-color: var(--border);
-            box-shadow: 0 1px 8px rgba(0,0,0,0.04);
-        }
+        nav.scrolled { border-bottom-color: var(--border); box-shadow: 0 1px 8px rgba(0,0,0,0.04); }
         .nav-inner {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 64px;
+            max-width: 1040px; margin: 0 auto; padding: 0 2rem;
+            display: flex; justify-content: space-between; align-items: center; height: 64px;
         }
         .nav-name {
-            font-family: var(--serif);
-            font-size: 1.25rem;
-            color: var(--ink);
-            text-decoration: none;
-            font-weight: 600;
+            font-family: var(--serif); font-size: 1.25rem; color: var(--ink);
+            text-decoration: none; font-weight: 600;
         }
         .nav-links { display: flex; gap: 0.3rem; }
         .nav-links a {
-            text-decoration: none;
-            color: var(--muted);
-            font-size: 0.84rem;
-            font-weight: 500;
-            letter-spacing: 0.03em;
-            text-transform: uppercase;
-            padding: 6px 12px;
-            border-radius: 6px;
-            transition: all 0.2s;
+            text-decoration: none; color: var(--muted); font-size: 0.84rem;
+            font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase;
+            padding: 6px 12px; border-radius: 6px; transition: all 0.2s;
         }
-        .nav-links a:hover {
-            color: var(--accent);
-            background: var(--accent-glow);
-        }
+        .nav-links a:hover { color: var(--accent); background: var(--accent-glow); }
         .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
-        .hamburger span {
-            display: block; width: 20px; height: 2px;
-            background: var(--ink); margin: 4px 0;
-            transition: all 0.3s;
-            border-radius: 1px;
-        }
+        .hamburger span { display: block; width: 20px; height: 2px; background: var(--ink); margin: 4px 0; border-radius: 1px; }
 
-        /* LAYOUT */
-        main { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+        /* ═══ LAYOUT ═══ */
+        main { max-width: 1040px; margin: 0 auto; padding: 0 2rem; }
         section { padding: 3rem 0; }
-
         .section-header { margin-bottom: 2rem; }
         .section-label {
-            font-family: var(--mono);
-            font-size: 0.72rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--accent-mid);
-            margin-bottom: 0.3rem;
+            font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
+            text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent-mid); margin-bottom: 0.3rem;
         }
         .section-title {
-            font-family: var(--serif);
-            font-size: 1.75rem;
-            font-weight: 400;
-            letter-spacing: -0.02em;
-            color: var(--ink);
+            font-family: var(--serif); font-size: 1.75rem; font-weight: 400;
+            letter-spacing: -0.02em; color: var(--ink);
         }
-        .divider {
-            border: none;
-            height: 1px;
-            background: linear-gradient(to right, var(--border), transparent);
-        }
+        .divider { border: none; height: 1px; background: linear-gradient(to right, var(--border), transparent); }
 
-        /* HERO */
+        /* ═══ HERO ═══ */
         .hero {
-            padding-top: 110px;
-            padding-bottom: 3rem;
-            display: grid;
-            grid-template-columns: 210px 1fr;
-            gap: 2.5rem;
-            align-items: start;
+            padding-top: 110px; padding-bottom: 3rem;
+            display: grid; grid-template-columns: 210px 1fr; gap: 2.5rem; align-items: start;
             animation: heroIn 0.7s ease-out;
         }
-        @keyframes heroIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes heroIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
         .hero-photo-wrapper { position: relative; }
         .hero-photo-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 8px; left: 8px;
-            width: 100%; height: 100%;
-            border-radius: 14px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-light));
-            opacity: 0.15;
+            content:''; position: absolute; top:8px; left:8px; width:100%; height:100%;
+            border-radius: 14px; background: linear-gradient(135deg, var(--accent), var(--accent-light)); opacity:0.15;
         }
         .hero-photo {
-            width: 210px; height: 240px;
-            border-radius: 14px;
-            object-fit: cover;
-            position: relative;
-            z-index: 1;
-            border: 2px solid var(--border);
+            width:210px; height:240px; border-radius:14px; object-fit:cover;
+            position:relative; z-index:1; border:2px solid var(--border);
             background: linear-gradient(145deg, #1e3a5f, #2d5a8e);
-            display: flex; align-items: center; justify-content: center;
-            color: white; font-size: 2.8rem; font-family: var(--serif);
-            font-weight: 600;
+            display:flex; align-items:center; justify-content:center;
+            color:white; font-size:2.8rem; font-family: var(--serif); font-weight:600;
         }
-        .hero-text h1 {
-            font-family: var(--serif);
-            font-size: 2.6rem;
-            font-weight: 600;
-            line-height: 1.15;
-            letter-spacing: -0.03em;
-            margin-bottom: 0.3rem;
-        }
-        .hero-text .tagline {
-            font-size: 1.15rem;
-            color: var(--accent-mid);
-            font-weight: 500;
-            margin-bottom: 0.15rem;
-        }
-        .hero-text .affiliation {
-            color: var(--muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.1rem;
-        }
-        .hero-text .bio {
-            font-size: 1rem;
-            color: #334155;
-            line-height: 1.8;
-            max-width: 600px;
-        }
-        .hero-text .bio a {
-            color: var(--accent-mid);
-            text-decoration: none;
-            border-bottom: 1px solid var(--border);
-            transition: border-color 0.2s;
-        }
+        .hero-text h1 { font-family: var(--serif); font-size:2.6rem; font-weight:600; line-height:1.15; letter-spacing:-0.03em; margin-bottom:0.3rem; }
+        .hero-text .tagline { font-size:1.15rem; color: var(--accent-mid); font-weight:500; margin-bottom:0.15rem; }
+        .hero-text .affiliation { color: var(--muted); font-size:0.95rem; margin-bottom:1.1rem; }
+        .hero-text .bio { font-size:1rem; color:#334155; line-height:1.8; max-width:620px; }
+        .hero-text .bio a { color: var(--accent-mid); text-decoration:none; border-bottom:1px solid var(--border); transition: border-color 0.2s; }
         .hero-text .bio a:hover { border-color: var(--accent-mid); }
-
-        .hero-links {
-            margin-top: 1.3rem;
-            display: flex; gap: 0.6rem; flex-wrap: wrap;
-        }
+        .hero-links { margin-top:1.3rem; display:flex; gap:0.6rem; flex-wrap:wrap; }
         .hero-links a {
-            display: inline-flex;
-            align-items: center; gap: 5px;
-            text-decoration: none;
-            font-size: 0.82rem;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-            padding: 7px 16px;
-            border-radius: 7px;
-            transition: all 0.25s;
+            display:inline-flex; align-items:center; gap:5px; text-decoration:none;
+            font-size:0.82rem; font-weight:600; letter-spacing:0.02em; padding:7px 16px; border-radius:7px; transition: all 0.25s;
         }
-        .btn-primary {
-            background: var(--accent);
-            color: #fff;
-            border: 1px solid var(--accent);
+        .btn-primary { background: var(--accent); color:#fff; border:1px solid var(--accent); }
+        .btn-primary:hover { background: var(--accent-mid); border-color: var(--accent-mid); transform:translateY(-1px); box-shadow: var(--shadow-md); }
+        .btn-outline { color: var(--accent); border:1px solid var(--border); background: var(--card-bg); }
+        .btn-outline:hover { border-color: var(--accent); background: var(--highlight); transform:translateY(-1px); }
+
+        /* ═══ THEME OVERVIEW CARDS ═══ */
+        .theme-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;
         }
-        .btn-primary:hover {
-            background: var(--accent-mid);
-            border-color: var(--accent-mid);
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-md);
+        .theme-card {
+            background: var(--card-bg); border:1px solid var(--border); border-radius:12px;
+            padding:1.4rem; transition: all 0.3s ease; position:relative; overflow:hidden; cursor:pointer;
         }
-        .btn-outline {
-            color: var(--accent);
-            border: 1px solid var(--border);
-            background: var(--card-bg);
+        .theme-card::before {
+            content:''; position:absolute; top:0; left:0; right:0; height:3px;
+            background: linear-gradient(to right, var(--accent), var(--accent-light)); opacity:0; transition: opacity 0.3s;
         }
-        .btn-outline:hover {
-            border-color: var(--accent);
-            background: var(--highlight);
-            transform: translateY(-1px);
+        .theme-card:hover { transform:translateY(-3px); box-shadow: var(--shadow-lg); border-color:transparent; }
+        .theme-card:hover::before { opacity:1; }
+        .theme-tag {
+            font-family: var(--mono); font-size:0.68rem; font-weight:500; text-transform:uppercase;
+            letter-spacing:0.08em; color: var(--accent-mid); background: var(--highlight);
+            display:inline-block; padding:2px 8px; border-radius:4px; margin-bottom:0.6rem;
+        }
+        .theme-card h3 { font-family: var(--serif); font-size:1.05rem; font-weight:600; margin-bottom:0.4rem; line-height:1.35; }
+        .theme-card p { font-size:0.86rem; color: var(--muted); line-height:1.6; }
+        .theme-card .jump-link { font-size:0.78rem; color: var(--accent-mid); margin-top:0.5rem; display:inline-block; font-weight:500; }
+
+        /* ═══ RESEARCH THEME DETAIL SECTIONS ═══ */
+        .theme-section { margin-top: 2.5rem; }
+        .theme-section-header {
+            display: flex; align-items: center; gap: 0.8rem;
+            padding-bottom: 0.8rem; border-bottom: 2px solid var(--highlight); margin-bottom: 1.5rem;
+        }
+        .theme-section-header .theme-icon {
+            width:40px; height:40px; border-radius:10px; background: var(--highlight);
+            display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0;
+        }
+        .theme-section-header h3 {
+            font-family: var(--serif); font-size:1.35rem; font-weight:600; letter-spacing:-0.01em;
         }
 
-        /* RESEARCH */
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
+        /* Paper entry within a theme */
+        .paper-entry {
+            background: var(--card-bg); border:1px solid var(--border); border-radius:12px;
+            padding:1.5rem; margin-bottom:1.2rem; transition: box-shadow 0.3s;
         }
-        .research-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+        .paper-entry:hover { box-shadow: var(--shadow-md); }
+        .paper-entry-title {
+            font-weight:600; font-size:1rem; line-height:1.5; color: var(--ink); margin-bottom:0.3rem;
         }
-        .research-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(to right, var(--accent), var(--accent-light));
-            opacity: 0;
-            transition: opacity 0.3s;
+        .paper-entry-authors {
+            font-size:0.84rem; color: var(--muted); margin-bottom:0.6rem;
         }
-        .research-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-            border-color: transparent;
+        .paper-entry-authors .me { color: var(--accent); font-weight:600; }
+        .paper-entry-venue {
+            font-size:0.82rem; color: var(--accent-mid); font-style:italic; margin-bottom:0.6rem;
         }
-        .research-card:hover::before { opacity: 1; }
-        .research-tag {
-            font-family: var(--mono);
-            font-size: 0.68rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--accent-mid);
-            background: var(--highlight);
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 4px;
-            margin-bottom: 0.7rem;
+        .paper-entry-desc {
+            font-size:0.92rem; color:#334155; line-height:1.75; margin-bottom:0.8rem;
         }
-        .research-card h3 {
-            font-family: var(--serif);
-            font-size: 1.08rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            line-height: 1.35;
+        .paper-entry-links { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.6rem; }
+        .paper-entry-links a {
+            font-size:0.72rem; font-weight:500; text-decoration:none; color: var(--accent-mid);
+            padding:3px 10px; border:1px solid var(--border); border-radius:4px;
+            transition: all 0.2s; font-family: var(--mono);
         }
-        .research-card p {
-            font-size: 0.88rem;
-            color: var(--muted);
-            line-height: 1.65;
+        .paper-entry-links a:hover { background: var(--highlight); border-color: var(--accent-mid); }
+
+        /* Plot placeholder */
+        .paper-plot-container {
+            margin-top:0.8rem; display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:0.8rem;
+        }
+        .paper-plot {
+            border:1px dashed var(--border); border-radius:8px; padding:2rem 1rem;
+            text-align:center; color: var(--muted-light); font-size:0.82rem;
+            background: #fafafa; transition: all 0.2s;
+        }
+        .paper-plot img {
+            max-width:100%; border-radius:6px; border:1px solid var(--border);
         }
 
-        /* PUBLICATIONS */
-        .pub-year-header {
-            font-family: var(--mono);
-            font-size: 0.78rem;
-            font-weight: 500;
-            color: var(--accent-mid);
-            letter-spacing: 0.08em;
-            margin-top: 2.2rem;
-            margin-bottom: 0.6rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--highlight);
+        /* ═══ FUTURE DIRECTIONS ═══ */
+        .future-card {
+            background: var(--green-bg); border:1px solid var(--green-border); border-radius:12px;
+            padding:1.4rem; margin-bottom:1rem;
         }
-        .pub-year-header:first-of-type { margin-top: 0; }
-        .pub-item {
-            padding: 0.9rem 0;
-            display: grid;
-            grid-template-columns: 28px 1fr;
-            gap: 0.8rem;
-            border-bottom: 1px solid rgba(0,0,0,0.03);
+        .future-card h4 { font-family: var(--serif); font-size:1rem; font-weight:600; margin-bottom:0.3rem; }
+        .future-card p { font-size:0.9rem; color:#334155; line-height:1.7; }
+        .future-tag {
+            font-family: var(--mono); font-size:0.65rem; font-weight:500; text-transform:uppercase;
+            letter-spacing:0.08em; color:#16a34a; background:rgba(22,163,74,0.1);
+            display:inline-block; padding:2px 8px; border-radius:4px; margin-bottom:0.5rem;
         }
-        .pub-item:last-child { border-bottom: none; }
-        .pub-num {
-            font-family: var(--mono);
-            font-size: 0.72rem;
-            color: var(--muted-light);
-            padding-top: 3px;
-            text-align: right;
-        }
-        .pub-title {
-            font-weight: 600;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            color: var(--ink);
-        }
-        .pub-authors {
-            font-size: 0.86rem;
-            color: var(--muted);
-            margin-top: 0.15rem;
-            line-height: 1.5;
-        }
-        .pub-authors .me { color: var(--accent); font-weight: 600; }
-        .pub-venue {
-            font-size: 0.84rem;
-            color: var(--accent-mid);
-            font-style: italic;
-            margin-top: 0.1rem;
-        }
-        .pub-links {
-            margin-top: 0.35rem;
-            display: flex; gap: 0.5rem; flex-wrap: wrap;
-        }
-        .pub-links a {
-            font-size: 0.72rem;
-            font-weight: 500;
-            text-decoration: none;
-            color: var(--accent-mid);
-            padding: 2px 8px;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            transition: all 0.2s;
-            font-family: var(--mono);
-        }
-        .pub-links a:hover {
-            background: var(--highlight);
-            border-color: var(--accent-mid);
-        }
-        .pub-note {
-            font-size: 0.84rem;
-            color: var(--muted);
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background: var(--warm);
-            border-radius: 8px;
-            border-left: 3px solid #f59e0b;
-        }
-        .pub-note a { color: var(--accent-mid); }
 
-        /* TALKS */
-        .talks-grid { display: grid; gap: 0.5rem; }
+        /* ═══ TALKS ═══ */
         .talk-item {
-            display: grid;
-            grid-template-columns: 110px 1fr;
-            gap: 1rem;
-            padding: 0.7rem 0;
-            border-bottom: 1px solid rgba(0,0,0,0.03);
-            font-size: 0.92rem;
+            display:grid; grid-template-columns:110px 1fr; gap:1rem;
+            padding:0.7rem 0; border-bottom:1px solid rgba(0,0,0,0.03); font-size:0.92rem;
         }
-        .talk-date {
-            font-family: var(--mono);
-            font-size: 0.78rem;
-            color: var(--muted);
-            padding-top: 2px;
-        }
-        .talk-title { font-weight: 500; }
-        .talk-venue { color: var(--muted); font-size: 0.88rem; }
+        .talk-date { font-family: var(--mono); font-size:0.78rem; color: var(--muted); padding-top:2px; }
+        .talk-title { font-weight:500; }
+        .talk-venue { color: var(--muted); font-size:0.88rem; }
         .show-more-btn {
-            margin-top: 1rem;
-            background: none;
-            border: 1px solid var(--border);
-            padding: 8px 20px;
-            border-radius: 6px;
-            font-family: var(--sans);
-            font-size: 0.85rem;
-            color: var(--accent-mid);
-            cursor: pointer;
-            transition: all 0.2s;
-            font-weight: 500;
+            margin-top:1rem; background:none; border:1px solid var(--border); padding:8px 20px;
+            border-radius:6px; font-family: var(--sans); font-size:0.85rem; color: var(--accent-mid);
+            cursor:pointer; transition: all 0.2s; font-weight:500;
         }
-        .show-more-btn:hover {
-            border-color: var(--accent-mid);
-            background: var(--highlight);
-        }
+        .show-more-btn:hover { border-color: var(--accent-mid); background: var(--highlight); }
 
-        /* NEWS */
+        /* ═══ NEWS ═══ */
         .news-item {
-            display: grid;
-            grid-template-columns: 110px 1fr;
-            gap: 1rem;
-            padding: 0.7rem 0;
-            border-bottom: 1px solid rgba(0,0,0,0.03);
+            display:grid; grid-template-columns:110px 1fr; gap:1rem;
+            padding:0.7rem 0; border-bottom:1px solid rgba(0,0,0,0.03);
         }
-        .news-date {
-            font-family: var(--mono);
-            font-size: 0.78rem;
-            color: var(--muted);
-            padding-top: 2px;
-        }
-        .news-content { font-size: 0.93rem; }
-        .news-content a { color: var(--accent-mid); text-decoration: none; border-bottom: 1px solid var(--border); }
+        .news-date { font-family: var(--mono); font-size:0.78rem; color: var(--muted); padding-top:2px; }
+        .news-content { font-size:0.93rem; }
+        .news-content a { color: var(--accent-mid); text-decoration:none; border-bottom:1px solid var(--border); }
         .news-content a:hover { border-color: var(--accent-mid); }
 
-        /* CV */
-        .cv-section { display: flex; align-items: center; gap: 1.5rem; }
+        /* ═══ CV ═══ */
+        .cv-section { display:flex; align-items:center; gap:1.5rem; }
         .cv-download {
-            display: inline-flex;
-            align-items: center; gap: 8px;
-            text-decoration: none;
-            background: var(--accent);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.92rem;
-            transition: all 0.25s;
+            display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+            background: var(--accent); color:white; padding:12px 28px; border-radius:8px;
+            font-weight:600; font-size:0.92rem; transition: all 0.25s;
         }
-        .cv-download:hover {
-            background: var(--accent-mid);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-        .cv-note { font-size: 0.88rem; color: var(--muted); }
+        .cv-download:hover { background: var(--accent-mid); transform:translateY(-2px); box-shadow: var(--shadow-md); }
+        .cv-note { font-size:0.88rem; color: var(--muted); }
 
-        /* CONTACT */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
-        }
-        .contact-block { margin-bottom: 1.4rem; }
+        /* ═══ CONTACT ═══ */
+        .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:2.5rem; }
+        .contact-block { margin-bottom:1.4rem; }
         .contact-label {
-            font-family: var(--mono);
-            font-weight: 500;
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--muted);
-            margin-bottom: 0.35rem;
+            font-family: var(--mono); font-weight:500; font-size:0.72rem;
+            text-transform:uppercase; letter-spacing:0.1em; color: var(--muted); margin-bottom:0.35rem;
         }
-        .contact-info p { font-size: 0.93rem; line-height: 1.7; }
-        .contact-info a {
-            color: var(--accent-mid);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s;
-        }
+        .contact-info p { font-size:0.93rem; line-height:1.7; }
+        .contact-info a { color: var(--accent-mid); text-decoration:none; border-bottom:1px solid transparent; transition: border-color 0.2s; }
         .contact-info a:hover { border-bottom-color: var(--accent-mid); }
 
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 2.5rem 2rem;
-            font-size: 0.8rem;
-            color: var(--muted-light);
-            border-top: 1px solid var(--border);
-            margin-top: 1rem;
-        }
-        footer a { color: var(--muted); text-decoration: none; }
+        /* ═══ FOOTER ═══ */
+        footer { text-align:center; padding:2.5rem 2rem; font-size:0.8rem; color: var(--muted-light); border-top:1px solid var(--border); margin-top:1rem; }
+        footer a { color: var(--muted); text-decoration:none; }
 
-        /* ANIMATIONS */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(16px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        /* ═══ ANIMATIONS ═══ */
+        .fade-in { opacity:0; transform:translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        .fade-in.visible { opacity:1; transform:translateY(0); }
 
-        /* RESPONSIVE */
+        /* ═══ RESPONSIVE ═══ */
         @media (max-width: 768px) {
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 1.5rem;
-                padding-top: 90px;
-            }
-            .hero-photo-wrapper { margin: 0 auto; width: 160px; }
-            .hero-photo { width: 160px; height: 180px; }
-            .hero-text .bio { max-width: 100%; }
-            .hero-links { justify-content: center; }
+            .hero { grid-template-columns:1fr; text-align:center; gap:1.5rem; padding-top:90px; }
+            .hero-photo-wrapper { margin:0 auto; width:160px; }
+            .hero-photo { width:160px; height:180px; }
+            .hero-text .bio { max-width:100%; }
+            .hero-links { justify-content:center; }
             .nav-links {
-                display: none;
-                position: absolute;
-                top: 64px; left: 0; right: 0;
-                background: rgba(250, 250, 249, 0.98);
-                backdrop-filter: blur(16px);
-                flex-direction: column;
-                padding: 1rem 2rem 1.5rem;
-                gap: 0.2rem;
-                border-bottom: 1px solid var(--border);
+                display:none; position:absolute; top:64px; left:0; right:0;
+                background:rgba(250,250,249,0.98); backdrop-filter:blur(16px);
+                flex-direction:column; padding:1rem 2rem 1.5rem; gap:0.2rem; border-bottom:1px solid var(--border);
             }
-            .nav-links.open { display: flex; }
-            .hamburger { display: block; }
-            .contact-grid { grid-template-columns: 1fr; }
-            .hero-text h1 { font-size: 2rem; }
-            .section-title { font-size: 1.5rem; }
-            .talk-item, .news-item { grid-template-columns: 1fr; gap: 0.15rem; }
-            .pub-item { grid-template-columns: 1fr; }
-            .pub-num { display: none; }
-            .research-grid { grid-template-columns: 1fr; }
+            .nav-links.open { display:flex; }
+            .hamburger { display:block; }
+            .contact-grid { grid-template-columns:1fr; }
+            .hero-text h1 { font-size:2rem; }
+            .section-title { font-size:1.5rem; }
+            .talk-item, .news-item { grid-template-columns:1fr; gap:0.15rem; }
+            .theme-grid { grid-template-columns:1fr; }
+            .paper-plot-container { grid-template-columns:1fr; }
         }
     </style>
 </head>
 <body>
 
-<!-- NAVIGATION -->
+<!-- ══════════ NAVIGATION ══════════ -->
 <nav id="navbar">
     <div class="nav-inner">
         <a href="#about" class="nav-name">Subhojit Roy</a>
@@ -529,7 +300,8 @@
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#research">Research</a>
-            <a href="#publications">Publications</a>
+            <a href="#details">Papers</a>
+            <a href="#future">Future</a>
             <a href="#talks">Talks</a>
             <a href="#news">News</a>
             <a href="#cv">CV</a>
@@ -540,13 +312,12 @@
 
 <main>
 
-<!-- HERO / ABOUT -->
+<!-- ══════════ HERO / ABOUT ══════════ -->
 <section id="about" class="hero">
     <div class="hero-photo-wrapper">
         <!-- TO ADD YOUR PHOTO: Replace this div with <img src="photo.jpg" class="hero-photo" alt="Subhojit Roy"> -->
         <div class="hero-photo">SR</div>
     </div>
-
     <div class="hero-text">
         <h1>Subhojit Roy</h1>
         <div class="tagline">Postdoctoral Fellow</div>
@@ -563,7 +334,6 @@
             <a href="mailto:sroy@anl.gov" class="btn-primary">✉ sroy@anl.gov</a>
             <a href="https://inspirehep.net/authors/1835914" target="_blank" class="btn-outline">iNSPIRE</a>
             <a href="https://github.com/subhojitphy" target="_blank" class="btn-outline">GitHub</a>
-            <!-- Uncomment and add your IDs: -->
             <!-- <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" class="btn-outline">Scholar</a> -->
             <!-- <a href="https://orcid.org/YOUR-ORCID" target="_blank" class="btn-outline">ORCID</a> -->
         </div>
@@ -572,236 +342,414 @@
 
 <hr class="divider">
 
-<!-- RESEARCH -->
+<!-- ══════════ RESEARCH OVERVIEW (THEME CARDS) ══════════ -->
 <section id="research" class="fade-in">
     <div class="section-header">
         <div class="section-label">Research Program</div>
         <h2 class="section-title">Research Interests</h2>
     </div>
-    <div class="research-grid">
-        <div class="research-card">
-            <span class="research-tag">Colliders</span>
+    <div class="theme-grid">
+        <a href="#theme-higgs" class="theme-card" style="text-decoration:none; color:inherit;">
+            <span class="theme-tag">Higgs Portal</span>
+            <h3>Higgs Portal Dark Matter &amp; Baryogenesis</h3>
+            <p>Inelastic scalar DM, spontaneous CP violation, electroweak baryogenesis, Galactic Center gamma-ray excess.</p>
+            <span class="jump-link">See papers ↓</span>
+        </a>
+        <a href="#theme-ewpt" class="theme-card" style="text-decoration:none; color:inherit;">
+            <span class="theme-tag">Phase Transitions</span>
+            <h3>Electroweak Phase Transitions &amp; Thermal Resummation</h3>
+            <p>Tadpole resummation in 2HDM, bubble-wall dynamics, GW signals from first-order transitions, relic dilution.</p>
+            <span class="jump-link">See papers ↓</span>
+        </a>
+        <a href="#theme-collider" class="theme-card" style="text-decoration:none; color:inherit;">
+            <span class="theme-tag">Colliders</span>
             <h3>BSM &amp; Collider Phenomenology</h3>
-            <p>Searches for new physics at HL-LHC, Muon Collider, and EIC using cut-based and ML analyses (BDTs, likelihood methods). Probing unprobed regions of SUSY, extended Higgs, and Higgs-portal scenarios. Testing proton structure and lepton PDFs.</p>
-        </div>
-        <div class="research-card">
-            <span class="research-tag">Early Universe</span>
-            <h3>Electroweak Baryogenesis &amp; Phase Transitions</h3>
-            <p>Advances in thermal resummation schemes for finite-temperature field theory. Improved bubble-wall dynamics in first-order phase transitions. Baryon asymmetry generation via spontaneous CP violation. GW signatures testable at PTAs and LISA.</p>
-        </div>
-        <div class="research-card">
-            <span class="research-tag">Dark Sector</span>
-            <h3>Dark Matter Phenomenology</h3>
-            <p>Direct and astrophysical indirect detection probes. Higgs-portal inelastic dark matter with coannihilation. Relic density dilution from first-order transitions. Galactic Center gamma-ray excess via Fermi-LAT and CTAO.</p>
-        </div>
-        <div class="research-card">
-            <span class="research-tag">Cosmology</span>
-            <h3>Dynamical Dark Energy &amp; LSS</h3>
-            <p>Interacting dark matter–dark energy frameworks motivated by DESI BAO results. Mass-varying dark matter and phantom-like equation of state. EFT of large-scale structure and primordial non-Gaussianity with SPHEREx.</p>
-        </div>
-        <div class="research-card">
-            <span class="research-tag">Neutrinos</span>
+            <p>SUSY searches at HL-LHC with ML, compressed spectra, photon signatures, R-parity violation, lepton PDFs at EIC.</p>
+            <span class="jump-link">See papers ↓</span>
+        </a>
+        <a href="#theme-neutrino" class="theme-card" style="text-decoration:none; color:inherit;">
+            <span class="theme-tag">Neutrinos</span>
             <h3>Neutrino Physics &amp; Anomalies</h3>
-            <p>Neutrino mass-generation via type-I seesaw with radiatively stable cancellations. Heavy neutral lepton searches at muon colliders. Unified explanation of LSND, MiniBooNE, and ATOMKI anomalies via 17 MeV pseudoscalar.</p>
-        </div>
-        <div class="research-card">
-            <span class="research-tag">GW Cosmology</span>
-            <h3>Gravitational Waves &amp; Cosmic Defects</h3>
-            <p>Stochastic GW backgrounds from cosmic strings, domain walls, and supercooled transitions. Primordial black hole formation from supercooled phase transitions. Combined PTA spectral fits using PTArcade.</p>
-        </div>
+            <p>17 MeV pseudoscalar for LSND/MiniBooNE/ATOMKI, heavy neutral leptons at muon collider.</p>
+            <span class="jump-link">See papers ↓</span>
+        </a>
+        <a href="#theme-cosmo" class="theme-card" style="text-decoration:none; color:inherit;">
+            <span class="theme-tag">Cosmology</span>
+            <h3>Dark Energy, GW Cosmology &amp; LSS</h3>
+            <p>DESI-motivated dynamical dark energy, mass-varying DM, PTA signals, primordial black holes.</p>
+            <span class="jump-link">See papers ↓</span>
+        </a>
+        <a href="#theme-susy" class="theme-card" style="text-decoration:none; color:inherit;">
+            <span class="theme-tag">SUSY / NMSSM</span>
+            <h3>NMSSM Dark Matter &amp; Phase Transitions</h3>
+            <p>Bino-like DM in Z₃-NMSSM, ewino searches, EWPT and GW prospects in the NMSSM.</p>
+            <span class="jump-link">See papers ↓</span>
+        </a>
     </div>
 </section>
 
 <hr class="divider">
 
-<!-- PUBLICATIONS -->
-<section id="publications" class="fade-in">
+<!-- ══════════ DETAILED RESEARCH (PAPERS BY THEME) ══════════ -->
+<section id="details" class="fade-in">
     <div class="section-header">
-        <div class="section-label">Publications</div>
-        <h2 class="section-title">Selected Papers</h2>
+        <div class="section-label">Research Details</div>
+        <h2 class="section-title">Papers by Theme</h2>
     </div>
-    <p style="font-size:0.9rem; color:var(--muted); margin-bottom:1.5rem;">
-        Full list on <a href="https://inspirehep.net/authors/1835914?ui-citation-summary=true" target="_blank" style="color:var(--accent-mid)">InspireHEP →</a>
-        &nbsp;|&nbsp; Alphabetical author ordering is standard in HEP.
-    </p>
 
-    <div class="pub-year-header">2025</div>
+    <!-- ─── THEME 1: Higgs Portal DM & Baryogenesis ─── -->
+    <div class="theme-section" id="theme-higgs">
+        <div class="theme-section-header">
+            <div class="theme-icon">⚛️</div>
+            <h3>Higgs Portal Dark Matter &amp; Baryogenesis</h3>
+        </div>
 
-    <div class="pub-item">
-        <span class="pub-num">1</span>
-        <div>
-            <div class="pub-title">Heavy Neutral Lepton at Same-Sign Muon Collider</div>
-            <div class="pub-authors">R. Kitano, I. Low, R. Matsudo, S. Okawa, <span class="me">S. Roy</span></div>
-            <div class="pub-venue">arXiv:2510.18390 [hep-ph]</div>
-            <div class="pub-links"><a href="https://arxiv.org/abs/2510.18390" target="_blank">arXiv</a></div>
+        <div class="paper-entry">
+            <div class="paper-entry-title">Gamma-Rays and Gravitational Waves from Inelastic Higgs Portal Dark Matter</div>
+            <div class="paper-entry-authors">D. Hooper, G. Krnjaic, D. Rocha, <span class="me">S. Roy</span></div>
+            <div class="paper-entry-venue">arXiv:2507.22975 [hep-ph]</div>
+            <div class="paper-entry-desc">
+                We propose a Higgs portal inelastic scalar dark matter model in which a complex singlet splits into quasi-degenerate states,
+                suppressing direct detection and setting the relic abundance via coannihilation while triggering a first-order electroweak phase transition.
+                The same dynamics account for the Galactic-Center gamma-ray excess and yield line-to-continuum gamma-ray spectra
+                testable by Fermi-LAT and CTAO.
+            </div>
+            <div class="paper-entry-links">
+                <a href="https://arxiv.org/abs/2507.22975" target="_blank">arXiv</a>
+            </div>
+            <!-- TO ADD A PLOT: Replace the placeholder below with <img src="plots/higgs-portal-plot.png" alt="Description"> -->
+            <div class="paper-plot-container">
+                <div class="paper-plot">📊 Upload plot image here<br><small>e.g. plots/higgs-portal-grays.png</small></div>
+            </div>
         </div>
-    </div>
-    <div class="pub-item">
-        <span class="pub-num">2</span>
-        <div>
-            <div class="pub-title">Dark Matter and Electroweak Baryogenesis with Spontaneous CP Violation in the Early Universe</div>
-            <div class="pub-authors"><span class="me">S. Roy</span></div>
-            <div class="pub-venue">arXiv:2509.19982 [hep-ph]</div>
-            <div class="pub-links"><a href="https://arxiv.org/abs/2509.19982" target="_blank">arXiv</a></div>
-        </div>
-    </div>
-    <div class="pub-item">
-        <span class="pub-num">3</span>
-        <div>
-            <div class="pub-title">Shedding Light on Dark Matter at the LHC with Machine Learning</div>
-            <div class="pub-authors">E. Arganda, M. de los Rios, A. D. Perez, <span class="me">S. Roy</span>, R. M. Sandá Seoane, C. E. M. Wagner</div>
-            <div class="pub-venue">arXiv:2509.15121 [hep-ph]</div>
-            <div class="pub-links"><a href="https://arxiv.org/abs/2509.15121" target="_blank">arXiv</a></div>
-        </div>
-    </div>
-    <div class="pub-item">
-        <span class="pub-num">4</span>
-        <div>
-            <div class="pub-title">R-parity violation and 8 TeV four-jet events at the LHC</div>
-            <div class="pub-authors">P. Bittar, <span class="me">S. Roy</span>, C. E. M. Wagner</div>
-            <div class="pub-venue">Phys. Rev. D 112, 115030 &bull; arXiv:2509.09062</div>
-            <div class="pub-links">
-                <a href="https://arxiv.org/abs/2509.09062" target="_blank">arXiv</a>
-                <a href="https://doi.org/10.1103/PhysRevD.112.115030" target="_blank">DOI</a>
+
+        <div class="paper-entry">
+            <div class="paper-entry-title">Dark Matter and Electroweak Baryogenesis with Spontaneous CP Violation in the Early Universe</div>
+            <div class="paper-entry-authors"><span class="me">S. Roy</span></div>
+            <div class="paper-entry-venue">arXiv:2509.19982 [hep-ph]</div>
+            <div class="paper-entry-desc">
+                I extended the Higgs-portal model with a spontaneously CP-violating dimension-6 operator that simultaneously accommodates
+                electroweak baryogenesis and dark matter while explaining the Galactic Center gamma-ray excess.
+                CP violation occurs only during the electroweak phase transition and switches off afterward,
+                allowing the model to evade stringent electric dipole moment (EDM) constraints.
+            </div>
+            <div class="paper-entry-links">
+                <a href="https://arxiv.org/abs/2509.19982" target="_blank">arXiv</a>
+            </div>
+            <div class="paper-plot-container">
+                <div class="paper-plot">📊 Upload plot image here</div>
             </div>
         </div>
     </div>
-    <div class="pub-item">
-        <span class="pub-num">5</span>
-        <div>
-            <div class="pub-title">Gamma-Rays and Gravitational Waves from Inelastic Higgs Portal Dark Matter</div>
-            <div class="pub-authors">D. Hooper, G. Krnjaic, D. Rocha, <span class="me">S. Roy</span></div>
-            <div class="pub-venue">arXiv:2507.22975 [hep-ph]</div>
-            <div class="pub-links"><a href="https://arxiv.org/abs/2507.22975" target="_blank">arXiv</a></div>
+
+    <!-- ─── THEME 2: EWPT & Thermal Resummation ─── -->
+    <div class="theme-section" id="theme-ewpt">
+        <div class="theme-section-header">
+            <div class="theme-icon">🌡️</div>
+            <h3>Electroweak Phase Transitions &amp; Thermal Resummation</h3>
         </div>
-    </div>
-    <div class="pub-item">
-        <span class="pub-num">6</span>
-        <div>
-            <div class="pub-title">Self Consistent Thermal Resummation: A Case Study of the Phase Transition in 2HDM</div>
-            <div class="pub-authors">P. Bittar, <span class="me">S. Roy</span>, C. E. M. Wagner</div>
-            <div class="pub-venue">JHEP 12 (2025) 021 &bull; arXiv:2504.02024</div>
-            <div class="pub-links">
+
+        <div class="paper-entry">
+            <div class="paper-entry-title">Self Consistent Thermal Resummation: A Case Study of the Phase Transition in 2HDM</div>
+            <div class="paper-entry-authors">P. Bittar, <span class="me">S. Roy</span>, C. E. M. Wagner</div>
+            <div class="paper-entry-venue">JHEP 12 (2025) 021 &bull; arXiv:2504.02024</div>
+            <div class="paper-entry-desc">
+                For the first time, we implemented the tadpole resummation (partial dressing) scheme in a realistic BSM model — the Two-Higgs-Doublet Model (2HDM).
+                We demonstrated how conventional Arnold-Espinosa and Parwani schemes can produce spurious results such as symmetry non-restoration at very high temperatures.
+                The strength and dynamics of the phase transition, including bubble nucleation, change significantly depending on the resummation scheme.
+                We estimated the resulting theoretical uncertainty in the predicted gravitational-wave signal.
+            </div>
+            <div class="paper-entry-links">
                 <a href="https://arxiv.org/abs/2504.02024" target="_blank">arXiv</a>
                 <a href="https://doi.org/10.1007/JHEP12(2025)021" target="_blank">DOI</a>
             </div>
-        </div>
-    </div>
-    <div class="pub-item">
-        <span class="pub-num">7</span>
-        <div>
-            <div class="pub-title">Testing the lepton content of the proton at HERA and EIC</div>
-            <div class="pub-authors">L. Da Rold, A. D. Medina, <span class="me">S. Roy</span>, C. E. M. Wagner</div>
-            <div class="pub-venue">JHEP 01 (2025) 121 &bull; arXiv:2408.12644</div>
-            <div class="pub-links">
-                <a href="https://arxiv.org/abs/2408.12644" target="_blank">arXiv</a>
-                <a href="https://doi.org/10.1007/JHEP01(2025)121" target="_blank">DOI</a>
+            <div class="paper-plot-container">
+                <div class="paper-plot">📊 Upload plot image here</div>
             </div>
         </div>
-    </div>
-    <div class="pub-item">
-        <span class="pub-num">8</span>
-        <div>
-            <div class="pub-title">Dilution of dark matter relic abundance due to first order electroweak phase transition</div>
-            <div class="pub-authors"><span class="me">S. Roy</span></div>
-            <div class="pub-venue">Phys. Rev. D 111 (2025) 015037 &bull; arXiv:2212.11230</div>
-            <div class="pub-links">
-                <a href="https://arxiv.org/abs/2212.11230" target="_blank">arXiv</a>
-                <a href="https://doi.org/10.1103/PhysRevD.111.015037" target="_blank">DOI</a>
-            </div>
-        </div>
-    </div>
 
-    <div class="pub-year-header">2024</div>
-    <div class="pub-item">
-        <span class="pub-num">9</span>
-        <div>
-            <div class="pub-title">A 17 MeV pseudoscalar and the LSND, MiniBooNE and ATOMKI anomalies</div>
-            <div class="pub-authors">W. Abdallah, R. Gandhi, T. Ghosh, N. Khan, S. Roy, <span class="me">S. Roy</span></div>
-            <div class="pub-venue">JHEP 10 (2024) 086 &bull; arXiv:2406.07643</div>
-            <div class="pub-links">
-                <a href="https://arxiv.org/abs/2406.07643" target="_blank">arXiv</a>
-                <a href="https://doi.org/10.1007/JHEP10(2024)086" target="_blank">DOI</a>
+        <div class="paper-entry">
+            <div class="paper-entry-title">Interplay among gravitational waves, dark matter and collider signals in the singlet scalar extended type-II seesaw model</div>
+            <div class="paper-entry-authors">P. Ghosh, T. Ghosh, <span class="me">S. Roy</span></div>
+            <div class="paper-entry-venue">JHEP 10 (2023) 057 &bull; arXiv:2211.15640</div>
+            <div class="paper-entry-desc">
+                We explored the interplay between dark matter phenomenology, gravitational-wave signals, and collider signatures in the singlet scalar extended type-II seesaw model.
+                We demonstrated that parameter regions favored by a strong first-order EWPT can be probed through measurements of the Higgs di-photon decay rate and self-coupling,
+                providing a coherent multi-observable test of electroweak-scale new physics.
             </div>
-        </div>
-    </div>
-    <div class="pub-item">
-        <span class="pub-num">10</span>
-        <div>
-            <div class="pub-title">Dark Matter searches with photons at the LHC</div>
-            <div class="pub-authors"><span class="me">S. Roy</span>, C. E. M. Wagner</div>
-            <div class="pub-venue">JHEP 04 (2024) 106 &bull; arXiv:2401.08917</div>
-            <div class="pub-links">
-                <a href="https://arxiv.org/abs/2401.08917" target="_blank">arXiv</a>
-                <a href="https://doi.org/10.1007/JHEP04(2024)106" target="_blank">DOI</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="pub-year-header">2023</div>
-    <div class="pub-item">
-        <span class="pub-num">11</span>
-        <div>
-            <div class="pub-title">Interplay among gravitational waves, dark matter and collider signals in the singlet scalar extended type-II seesaw model</div>
-            <div class="pub-authors">P. Ghosh, T. Ghosh, <span class="me">S. Roy</span></div>
-            <div class="pub-venue">JHEP 10 (2023) 057 &bull; arXiv:2211.15640</div>
-            <div class="pub-links">
+            <div class="paper-entry-links">
                 <a href="https://arxiv.org/abs/2211.15640" target="_blank">arXiv</a>
                 <a href="https://doi.org/10.1007/JHEP10(2023)057" target="_blank">DOI</a>
             </div>
+            <div class="paper-plot-container">
+                <div class="paper-plot">📊 Upload plot image here</div>
+            </div>
+        </div>
+
+        <div class="paper-entry">
+            <div class="paper-entry-title">Dilution of dark matter relic abundance due to first order electroweak phase transition</div>
+            <div class="paper-entry-authors"><span class="me">S. Roy</span></div>
+            <div class="paper-entry-venue">Phys. Rev. D 111 (2025) 015037 &bull; arXiv:2212.11230</div>
+            <div class="paper-entry-desc">
+                I examined entropy injection during first-order electroweak transitions as a natural mechanism for dark matter relic density dilution.
+                Such dilution can reopen regions of parameter space otherwise excluded by relic density or direct-detection constraints.
+                The dilution factor is directly correlated with the stochastic gravitational-wave signal from the transition.
+            </div>
+            <div class="paper-entry-links">
+                <a href="https://arxiv.org/abs/2212.11230" target="_blank">arXiv</a>
+                <a href="https://doi.org/10.1103/PhysRevD.111.015037" target="_blank">DOI</a>
+            </div>
+            <div class="paper-plot-container">
+                <div class="paper-plot">📊 Upload plot image here</div>
+            </div>
         </div>
     </div>
-    <div class="pub-item">
-        <span class="pub-num">12</span>
-        <div>
-            <div class="pub-title">Hunting ewinos and a light scalar of Z₃-NMSSM with a bino-like dark matter in top squark decays at the LHC</div>
-            <div class="pub-authors">A. Datta, M. Guchait, A. Roy, <span class="me">S. Roy</span></div>
-            <div class="pub-venue">JHEP 11 (2023) 081 &bull; arXiv:2211.05905</div>
-            <div class="pub-links">
+
+    <!-- ─── THEME 3: Collider Phenomenology ─── -->
+    <div class="theme-section" id="theme-collider">
+        <div class="theme-section-header">
+            <div class="theme-icon">🔬</div>
+            <h3>BSM &amp; Collider Phenomenology</h3>
+        </div>
+
+        <div class="paper-entry">
+            <div class="paper-entry-title">Shedding Light on Dark Matter at the LHC with Machine Learning</div>
+            <div class="paper-entry-authors">E. Arganda, M. de los Rios, A. D. Perez, <span class="me">S. Roy</span>, R. M. Sandá Seoane, C. E. M. Wagner</div>
+            <div class="paper-entry-venue">arXiv:2509.15121 [hep-ph]</div>
+            <div class="paper-entry-desc">
+                We explored a compressed spectrum scenario where Higgsinos decay into a singlino-like LSP accompanied by a soft photon.
+                Using a machine-learning–based analysis triggering on a hard ISR jet that enhances the photon's chance to satisfy trigger criteria,
+                we demonstrated the LHC could probe Higgsino masses up to ~250 GeV with mass splittings below 20 GeV.
+            </div>
+            <div class="paper-entry-links">
+                <a href="https://arxiv.org/abs/2509.15121" target="_blank">arXiv</a>
+            </div>
+            <div class="paper-plot-container">
+                <div class="paper-plot">📊 Upload plot image here</div>
+            </div>
+        </div>
+
+        <div class="paper-entry">
+            <div class="paper-entry-title">Dark Matter searches with photons at the LHC</div>
+            <div class="paper-entry-authors"><span class="me">S. Roy</span>, C. E. M. Wagner</div>
+            <div class="paper-entry-venue">JHEP 04 (2024) 106 &bull; arXiv:2401.08917</div>
+            <div class="paper-entry-desc">
+                I proposed photon-rich LHC signatures arising in regions of compressed neutralino spectra consistent with dark matter and collider limits.
+                These signatures can explain the ATLAS–CMS reported soft-dilepton excesses and provide a new avenue for probing the dark sector through collider signatures
+                in regions where direct-detection rates are strongly suppressed due to blind-spot conditions from destructive interference.
+            </div>
+            <div class="paper-entry-links">
+                <a href="https://arxiv.org/abs/2401.08917" target="_blank">arXiv</a>
+                <a href="https://doi.org/10.1007/JHEP04(2024)106" target="_blank">DOI</a>
+            </div>
+            <div class="paper-plot-container">
+                <div class="paper-plot">📊 Upload plot image here</div>
+            </div>
+        </div>
+
+        <div class="paper-entry">
+            <div class="paper-entry-title">R-parity violation and 8 TeV four-jet events at the LHC</div>
+            <div class="paper-entry-authors">P. Bittar, <span class="me">S. Roy</span>, C. E. M. Wagner</div>
+            <div class="paper-entry-venue">Phys. Rev. D 112, 115030 &bull; arXiv:2509.09062</div>
+            <div class="paper-entry-desc">
+                We proposed R-parity violating SUSY explanations of the recent CMS multi-jet excess,
+                predicting correlated signatures testable in forthcoming collider runs.
+            </div>
+            <div class="paper-entry-links">
+                <a href="https://arxiv.org/abs/2509.09062" target="_blank">arXiv</a>
+                <a href="https://doi.org/10.1103/PhysRevD.112.115030" target="_blank">DOI</a>
+            </div>
+            <div class="paper-plot-container">
+                <div class="paper-plot">📊 Upload plot image here</div>
+            </div>
+        </div>
+
+        <div class="paper-entry">
+            <div class="paper-entry-title">Testing the lepton content of the proton at HERA and EIC</div>
+            <div class="paper-entry-authors">L. Da Rold, A. D. Medina, <span class="me">S. Roy</span>, C. E. M. Wagner</div>
+            <div class="paper-entry-venue">JHEP 01 (2025) 121 &bull; arXiv:2408.12644</div>
+            <div class="paper-entry-desc">
+                A quark inside the proton can radiate a photon which splits into a lepton pair, giving the proton lepton parton distribution functions (PDFs).
+                We proposed to investigate such effects at HERA and the upcoming Electron-Ion Collider (EIC),
+                focusing on resonant Z-boson and non-resonant dilepton final states as direct probes of the proton's lepton PDFs.
+            </div>
+            <div class="paper-entry-links">
+                <a href="https://arxiv.org/abs/2408.12644" target="_blank">arXiv</a>
+                <a href="https://doi.org/10.1007/JHEP01(2025)121" target="_blank">DOI</a>
+            </div>
+            <div class="paper-plot-container">
+                <div class="paper-plot">📊 Upload plot image here</div>
+            </div>
+        </div>
+
+        <div class="paper-entry">
+            <div class="paper-entry-title">Hunting ewinos and a light scalar of Z₃-NMSSM with a bino-like dark matter in top squark decays at the LHC</div>
+            <div class="paper-entry-authors">A. Datta, M. Guchait, A. Roy, <span class="me">S. Roy</span></div>
+            <div class="paper-entry-venue">JHEP 11 (2023) 081 &bull; arXiv:2211.05905</div>
+            <div class="paper-entry-desc">
+                We proposed strategies to discover light singlet-like scalars at the LHC through multiple cascade decays of heavy top squarks.
+                Using a multivariate analysis, we estimated that the HL-LHC could achieve a 5σ discovery reach for these signals.
+            </div>
+            <div class="paper-entry-links">
                 <a href="https://arxiv.org/abs/2211.05905" target="_blank">arXiv</a>
                 <a href="https://doi.org/10.1007/JHEP11(2023)081" target="_blank">DOI</a>
             </div>
+            <div class="paper-plot-container">
+                <div class="paper-plot">📊 Upload plot image here</div>
+            </div>
         </div>
     </div>
 
-    <div class="pub-year-header">2022</div>
-    <div class="pub-item">
-        <span class="pub-num">13</span>
-        <div>
-            <div class="pub-title">Electroweak phase transition in the Z₃-invariant NMSSM: Implications of LHC and Dark matter searches and prospects of detecting the gravitational waves</div>
-            <div class="pub-authors">A. Chatterjee, A. Datta, <span class="me">S. Roy</span></div>
-            <div class="pub-venue">JHEP 06 (2022) 108 &bull; arXiv:2202.12476</div>
-            <div class="pub-links">
+    <!-- ─── THEME 4: Neutrino Physics ─── -->
+    <div class="theme-section" id="theme-neutrino">
+        <div class="theme-section-header">
+            <div class="theme-icon">🔭</div>
+            <h3>Neutrino Physics &amp; Anomalies</h3>
+        </div>
+
+        <div class="paper-entry">
+            <div class="paper-entry-title">A 17 MeV pseudoscalar and the LSND, MiniBooNE and ATOMKI anomalies</div>
+            <div class="paper-entry-authors">W. Abdallah, R. Gandhi, T. Ghosh, N. Khan, S. Roy, <span class="me">S. Roy</span></div>
+            <div class="paper-entry-venue">JHEP 10 (2024) 086 &bull; arXiv:2406.07643</div>
+            <div class="paper-entry-desc">
+                We proposed a 2HDM + singlet-like pseudoscalar and sterile neutrinos scenario where beam ν<sub>μ</sub> scatter incoherently off nuclei
+                to produce heavy neutral leptons that decay into lighter neutrinos and a pseudoscalar yielding e⁺e⁻ pairs.
+                A 17 MeV pseudoscalar can also explain the ATOMKI anomaly, providing a unified origin for multiple low-energy excesses.
+                The MicroBooNE Collaboration recently cited this work in their latest analysis as a viable explanation.
+            </div>
+            <div class="paper-entry-links">
+                <a href="https://arxiv.org/abs/2406.07643" target="_blank">arXiv</a>
+                <a href="https://doi.org/10.1007/JHEP10(2024)086" target="_blank">DOI</a>
+            </div>
+            <div class="paper-plot-container">
+                <div class="paper-plot">📊 Upload plot image here</div>
+            </div>
+        </div>
+
+        <div class="paper-entry">
+            <div class="paper-entry-title">Heavy Neutral Lepton at Same-Sign Muon Collider</div>
+            <div class="paper-entry-authors">R. Kitano, I. Low, R. Matsudo, S. Okawa, <span class="me">S. Roy</span></div>
+            <div class="paper-entry-venue">arXiv:2510.18390 [hep-ph]</div>
+            <div class="paper-entry-desc">
+                We study HNL-mediated signatures at a proposed μ⁺μ⁺ collider: the lepton-flavor-violating channel μ⁺μ⁺ → W⁺τ⁺ν̄<sub>μ</sub>
+                and the lepton-number-violating channel μ⁺μ⁺ → W⁺W⁺ (the muon analogue of inverse neutrinoless double beta decay).
+                At the μTRISTAN collider with √s ~ 𝒪(10) TeV, the sensitivity to HNL mixing can surpass current electroweak precision bounds,
+                improving by an order of magnitude for 5–10 TeV HNLs.
+            </div>
+            <div class="paper-entry-links">
+                <a href="https://arxiv.org/abs/2510.18390" target="_blank">arXiv</a>
+            </div>
+            <div class="paper-plot-container">
+                <div class="paper-plot">📊 Upload plot image here</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── THEME 5: Cosmology / Dark Energy ─── -->
+    <div class="theme-section" id="theme-cosmo">
+        <div class="theme-section-header">
+            <div class="theme-icon">🌌</div>
+            <h3>Dark Energy, GW Cosmology &amp; Large-Scale Structure</h3>
+        </div>
+        <p style="font-size:0.92rem; color: var(--muted); margin-bottom:1rem; padding:1rem; background: var(--warm); border-radius:8px; border-left:3px solid #f59e0b;">
+            🔨 <strong>Work in progress</strong> — Several papers under preparation in this theme. Details will be added upon publication.
+            See <a href="#future" style="color:var(--accent-mid);">Future Directions</a> for more.
+        </p>
+    </div>
+
+    <!-- ─── THEME 6: NMSSM ─── -->
+    <div class="theme-section" id="theme-susy">
+        <div class="theme-section-header">
+            <div class="theme-icon">✨</div>
+            <h3>NMSSM Dark Matter &amp; Phase Transitions</h3>
+        </div>
+
+        <div class="paper-entry">
+            <div class="paper-entry-title">Electroweak phase transition in the Z₃-invariant NMSSM: Implications of LHC and Dark matter searches and prospects of detecting the gravitational waves</div>
+            <div class="paper-entry-authors">A. Chatterjee, A. Datta, <span class="me">S. Roy</span></div>
+            <div class="paper-entry-venue">JHEP 06 (2022) 108 &bull; arXiv:2202.12476</div>
+            <div class="paper-entry-desc">
+                We studied the electroweak phase transition in the Z₃-invariant NMSSM, demonstrating the interplay between LHC searches,
+                dark matter constraints, and prospects for detecting gravitational waves from a strong first-order phase transition in this framework.
+            </div>
+            <div class="paper-entry-links">
                 <a href="https://arxiv.org/abs/2202.12476" target="_blank">arXiv</a>
                 <a href="https://doi.org/10.1007/JHEP06(2022)108" target="_blank">DOI</a>
             </div>
+            <div class="paper-plot-container">
+                <div class="paper-plot">📊 Upload plot image here</div>
+            </div>
         </div>
-    </div>
 
-    <div class="pub-year-header">2021</div>
-    <div class="pub-item">
-        <span class="pub-num">14</span>
-        <div>
-            <div class="pub-title">A relatively light, highly bino-like dark matter in the Z₃-symmetric NMSSM and recent LHC searches</div>
-            <div class="pub-authors">W. Abdallah, A. Datta, <span class="me">S. Roy</span></div>
-            <div class="pub-venue">JHEP 04 (2021) 122 &bull; arXiv:2012.04026</div>
-            <div class="pub-links">
+        <div class="paper-entry">
+            <div class="paper-entry-title">A relatively light, highly bino-like dark matter in the Z₃-symmetric NMSSM and recent LHC searches</div>
+            <div class="paper-entry-authors">W. Abdallah, A. Datta, <span class="me">S. Roy</span></div>
+            <div class="paper-entry-venue">JHEP 04 (2021) 122 &bull; arXiv:2012.04026</div>
+            <div class="paper-entry-desc">
+                We identified direct-detection blind-spot conditions for bino-like dark matter arising from destructive interference among Feynman diagrams.
+                In these regions where direct-detection rates are strongly suppressed, we proposed probing the dark sector through collider signatures instead,
+                exploring the implications for recent LHC searches.
+            </div>
+            <div class="paper-entry-links">
                 <a href="https://arxiv.org/abs/2012.04026" target="_blank">arXiv</a>
                 <a href="https://doi.org/10.1007/JHEP04(2021)122" target="_blank">DOI</a>
             </div>
+            <div class="paper-plot-container">
+                <div class="paper-plot">📊 Upload plot image here</div>
+            </div>
         </div>
-    </div>
-
-    <div class="pub-note">
-        ⚡ <strong>Work in progress:</strong> Several ongoing projects including vanishing neutrino masses, nano-hertz gravitational waves from conformal dark sectors,
-        phantom-like dark energy from mass-varying dark matter, electroweak baryogenesis with dynamical CP violation, and more.
-        See full list on <a href="https://inspirehep.net/authors/1835914" target="_blank">InspireHEP</a>.
     </div>
 </section>
 
 <hr class="divider">
 
-<!-- TALKS -->
+<!-- ══════════ FUTURE DIRECTIONS ══════════ -->
+<section id="future" class="fade-in">
+    <div class="section-header">
+        <div class="section-label">Looking Ahead</div>
+        <h2 class="section-title">Future Research Directions</h2>
+    </div>
+
+    <div class="future-card">
+        <span class="future-tag">Cosmology</span>
+        <h4>Dynamical Dark Energy &amp; Mass-Varying Dark Matter</h4>
+        <p>Motivated by DESI BAO results hinting at w(a) ≠ −1, I am studying interacting dark-sector models where dark matter and dark energy evolve jointly through a dynamical scalar field. Scenarios with field-dependent dark matter mass lead to effective phantom-like behavior (w &lt; −1), connecting DESI's hints to large-scale structure observables.</p>
+    </div>
+
+    <div class="future-card">
+        <span class="future-tag">GW Cosmology</span>
+        <h4>Nano-Hertz Gravitational Waves &amp; Primordial Black Holes</h4>
+        <p>Exploring dark-sector models that simultaneously reproduce the stochastic GW signals observed by NANOGrav (from phase transitions around the 100 MeV scale) and create favorable conditions for primordial black hole (PBH) formation. Combined fits of cosmic strings, domain walls, and first-order transitions using PTArcade.</p>
+    </div>
+
+    <div class="future-card">
+        <span class="future-tag">Neutrinos</span>
+        <h4>Vanishing Neutrino Masses &amp; Accidental Lepton Number Conservation</h4>
+        <p>Exploring radiatively stable cancellations in the dimension-5 Weinberg operator arising from specific alignments of Dirac Yukawa and Majorana mass matrices in the type-I seesaw. This mechanism implies an approximate lepton-number symmetry leading to distinctive collider signatures.</p>
+    </div>
+
+    <div class="future-card">
+        <span class="future-tag">Baryogenesis</span>
+        <h4>Electroweak Baryogenesis &amp; Dynamical CP Violation</h4>
+        <p>Studying spontaneous CP-violation scenarios at finite temperature with refined bubble-wall dynamics and transport effects for successful baryon asymmetry generation, along with corresponding collider and cosmological signatures.</p>
+    </div>
+
+    <div class="future-card">
+        <span class="future-tag">Colliders &amp; ML</span>
+        <h4>Quantum Information &amp; Machine Learning for Collider Physics</h4>
+        <p>Expanding toward quantum-information and ML-based approaches for collider phenomenology — leveraging entanglement, correlation structure, and data-driven inference to characterize complex events at HL-LHC, muon collider, and FCC.</p>
+    </div>
+
+    <div class="future-card">
+        <span class="future-tag">Dark Matter</span>
+        <h4>Multi-Messenger Dark Matter Searches</h4>
+        <p>Advancing multi-wavelength and multi-messenger DM searches combining gamma- and X-ray observations with laboratory probes of both heavy and light dark sectors, including GW signatures and emerging sensor-based techniques for axion-like and ultralight candidates.</p>
+    </div>
+</section>
+
+<hr class="divider">
+
+<!-- ══════════ TALKS ══════════ -->
 <section id="talks" class="fade-in">
     <div class="section-header">
         <div class="section-label">Presentations</div>
@@ -848,7 +796,7 @@
                 <span class="talk-date">Aug 2024</span>
                 <div>
                     <div class="talk-title">Interplay among gravitational waves, dark matter and collider signals</div>
-                    <div class="talk-venue">TeV Particle Astrophysics (TeVPA) 2024, University of Chicago</div>
+                    <div class="talk-venue">TeVPA 2024, University of Chicago</div>
                 </div>
             </div>
             <div class="talk-item">
@@ -886,49 +834,25 @@
 
 <hr class="divider">
 
-<!-- NEWS -->
+<!-- ══════════ NEWS ══════════ -->
 <section id="news" class="fade-in">
     <div class="section-header">
         <div class="section-label">Updates</div>
         <h2 class="section-title">News</h2>
     </div>
-    <div class="news-item">
-        <span class="news-date">Oct 2025</span>
-        <span class="news-content">Presented at the <strong>2025 CTEQ Fall Gathering</strong> at Argonne National Laboratory.</span>
-    </div>
-    <div class="news-item">
-        <span class="news-date">Aug 2025</span>
-        <span class="news-content">Multiple talks at <strong>Lepton-Photon 2025</strong> and <strong>SUSY 2025</strong>.</span>
-    </div>
-    <div class="news-item">
-        <span class="news-date">Jul 2025</span>
-        <span class="news-content">Attended workshop at <strong>Aspen Center for Physics</strong> and visited <strong>Perimeter Institute</strong>.</span>
-    </div>
-    <div class="news-item">
-        <span class="news-date">2025</span>
-        <span class="news-content">Paper on <a href="https://arxiv.org/abs/2504.02024" target="_blank">thermal resummation in 2HDM</a> published in <strong>JHEP</strong>.</span>
-    </div>
-    <div class="news-item">
-        <span class="news-date">2025</span>
-        <span class="news-content">Paper on <a href="https://arxiv.org/abs/2408.12644" target="_blank">lepton PDFs of the proton</a> published in <strong>JHEP</strong>.</span>
-    </div>
-    <div class="news-item">
-        <span class="news-date">2023</span>
-        <span class="news-content">Joined <strong>Argonne National Laboratory</strong> as a Postdoctoral Fellow in the HEP Division.</span>
-    </div>
-    <div class="news-item">
-        <span class="news-date">2023</span>
-        <span class="news-content">Completed Ph.D. at <strong>Harish-Chandra Research Institute</strong> (HBNI).</span>
-    </div>
-    <div class="news-item">
-        <span class="news-date">2021</span>
-        <span class="news-content">Awarded the <strong>Infosys Prize for Excellence in Research</strong>.</span>
-    </div>
+    <div class="news-item"><span class="news-date">Oct 2025</span><span class="news-content">Presented at the <strong>2025 CTEQ Fall Gathering</strong> at Argonne National Laboratory.</span></div>
+    <div class="news-item"><span class="news-date">Aug 2025</span><span class="news-content">Multiple talks at <strong>Lepton-Photon 2025</strong> and <strong>SUSY 2025</strong>.</span></div>
+    <div class="news-item"><span class="news-date">Jul 2025</span><span class="news-content">Attended workshop at <strong>Aspen Center for Physics</strong> and visited <strong>Perimeter Institute</strong>.</span></div>
+    <div class="news-item"><span class="news-date">2025</span><span class="news-content">Paper on <a href="https://arxiv.org/abs/2504.02024" target="_blank">thermal resummation in 2HDM</a> published in <strong>JHEP</strong>.</span></div>
+    <div class="news-item"><span class="news-date">2025</span><span class="news-content">Paper on <a href="https://arxiv.org/abs/2408.12644" target="_blank">lepton PDFs of the proton</a> published in <strong>JHEP</strong>.</span></div>
+    <div class="news-item"><span class="news-date">2023</span><span class="news-content">Joined <strong>Argonne National Laboratory</strong> as a Postdoctoral Fellow in the HEP Division.</span></div>
+    <div class="news-item"><span class="news-date">2023</span><span class="news-content">Completed Ph.D. at <strong>Harish-Chandra Research Institute</strong> (HBNI).</span></div>
+    <div class="news-item"><span class="news-date">2021</span><span class="news-content">Awarded the <strong>Infosys Prize for Excellence in Research</strong>.</span></div>
 </section>
 
 <hr class="divider">
 
-<!-- CV -->
+<!-- ══════════ CV ══════════ -->
 <section id="cv" class="fade-in">
     <div class="section-header">
         <div class="section-label">Curriculum Vitae</div>
@@ -936,13 +860,13 @@
     </div>
     <div class="cv-section">
         <a href="cv.pdf" class="cv-download" target="_blank">📄 Download CV</a>
-        <span class="cv-note">Upload your cv.pdf to the GitHub repo for this to work.</span>
+        <span class="cv-note">Upload cv.pdf to your GitHub repo for this link to work.</span>
     </div>
 </section>
 
 <hr class="divider">
 
-<!-- CONTACT -->
+<!-- ══════════ CONTACT ══════════ -->
 <section id="contact" class="fade-in">
     <div class="section-header">
         <div class="section-label">Get in Touch</div>
@@ -952,18 +876,11 @@
         <div class="contact-info">
             <div class="contact-block">
                 <div class="contact-label">Email</div>
-                <p>
-                    <a href="mailto:sroy@anl.gov">sroy@anl.gov</a><br>
-                    <a href="mailto:subhotheory@gmail.com">subhotheory@gmail.com</a>
-                </p>
+                <p><a href="mailto:sroy@anl.gov">sroy@anl.gov</a><br><a href="mailto:subhotheory@gmail.com">subhotheory@gmail.com</a></p>
             </div>
             <div class="contact-block">
                 <div class="contact-label">Office</div>
-                <p>
-                    High Energy Physics Division<br>
-                    Argonne National Laboratory<br>
-                    9700 S Cass Ave, Lemont, IL 60439, USA
-                </p>
+                <p>High Energy Physics Division<br>Argonne National Laboratory<br>9700 S Cass Ave, Lemont, IL 60439, USA</p>
             </div>
         </div>
         <div class="contact-info">
