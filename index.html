@@ -343,7 +343,7 @@
                 <a href="https://arxiv.org/abs/2211.15640" target="_blank">arXiv</a>
                 <a href="https://doi.org/10.1007/JHEP10(2023)057" target="_blank">DOI</a>
             </div>
-<!-- Row 1: 1 tall plot + 2 medium + 4 small limit plots -->
+<!-- Row 1: 1 tall plot + 2 medium + 2 limit plots with citation -->
 <div class="paper-plot-container" style="display: flex; flex-wrap: nowrap; width: 100%; align-items: center; gap: 6px; margin-bottom: 10px;">
     <img src="plots/typeII_BR_1.png" 
          style="flex: 0.8; min-width: 0; max-height: 270px; object-fit: contain;">
@@ -351,11 +351,28 @@
          style="flex: 0.8; min-width: 0; max-height: 270px; object-fit: contain;">
     <img src="plots/typeII_RAA_1.png" 
          style="flex: 0.7; min-width: 0; max-height: 250px; object-fit: contain;">
-    <!-- limit plots grouped tighter -->
-    <img src="plots/typeII_limit1.png" 
-         style="flex: 1.9; min-width: 0; max-height: 350px; object-fit: contain;">
-    <img src="plots/typeII_limit2.png" 
-         style="flex: 1.9; min-width: 0; max-height: 350px; object-fit: contain;">
+    <!-- ONLY THIS BLOCK CHANGES — wrap the 2 limit plots -->
+    <div style="position: relative; flex: 3.8; min-width: 0; display: flex; gap: 2px; align-items: center;">
+        <img src="plots/typeII_limit1.png" 
+             style="flex: 1; min-width: 0; max-height: 350px; object-fit: contain;">
+        <img src="plots/typeII_limit2.png" 
+             style="flex: 1; min-width: 0; max-height: 350px; object-fit: contain;">
+        <!-- Citation label -->
+        <div style="
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.65rem;
+            color: #555;
+            background: rgba(255,255,255,0.85);
+            padding: 1px 5px;
+            border-radius: 3px;
+            white-space: nowrap;
+            pointer-events: none;
+        ">arXiv:2108.10952</div>
+    </div>
+    <!-- END OF CHANGED BLOCK -->
 </div>
 <!-- Row 2: 1 tall + 4 uniform scatter/phase plots -->
 <div class="paper-plot-container" style="display: flex; flex-wrap: nowrap; width: 100%; align-items: center; gap: 6px; margin-bottom: 10px;">
