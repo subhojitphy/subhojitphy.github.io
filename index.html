@@ -984,6 +984,66 @@
     Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>10)});
-    document.querySelectorAll('.nav-links a').forEach(l=>{l.addEventListener('click',()=>document.querySelector('.nav-links'
+<script>
+    // Navbar scroll effect
+    window.addEventListener('scroll',()=>{
+        document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>10);
+    });
+
+    // Mobile nav close on link click
+    document.querySelectorAll('.nav-links a').forEach(l=>{
+        l.addEventListener('click',()=>{
+            document.querySelector('.nav-links').classList.remove('open');
+        });
+    });
+
+    // Fade-in sections on scroll
+    const observer = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+    },{threshold:0.08});
+    document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+
+    // Show more talks toggle
+    function toggleTalks(btn){
+        const more = document.getElementById('moreTalks');
+        const hidden = more.style.display==='none'||more.style.display==='';
+        more.style.display = hidden ? 'block' : 'none';
+        btn.textContent = hidden ? 'Show fewer talks ↑' : 'Show more talks ↓';
+    }
+</script>
+<script>
+(function(){
+    document.querySelectorAll('.paper-carousel').forEach(function(car){
+        var track = car.querySelector('.carousel-track');
+        var slides = car.querySelectorAll('.carousel-slide');
+        var dots = car.querySelectorAll('.carousel-dot');
+        var counter = car.querySelector('.carousel-counter');
+        var btnPrev = car.querySelector('.carousel-btn.prev');
+        var btnNext = car.querySelector('.carousel-btn.next');
+        var n = slides.length;
+        var cur = 0;
+        function go(idx){
+            cur = (idx + n) % n;
+            track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+            dots.forEach(function(d,i){ d.classList.toggle('active', i===cur); });
+            if(counter) counter.textContent = (cur+1) + ' / ' + n;
+        }
+        if(btnPrev) btnPrev.addEventListener('click', function(){ go(cur-1); });
+        if(btnNext) btnNext.addEventListener('click', function(){ go(cur+1); });
+        dots.forEach(function(d,i){ d.addEventListener('click', function(){ go(i); }); });
+        var startX = 0;
+        var vp = car.querySelector('.carousel-viewport');
+        if(vp){
+            vp.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive:true});
+            vp.addEventListener('touchend', function(e){
+                var dx = e.changedTouches[0].clientX - startX;
+                if(Math.abs(dx) > 40) go(dx < 0 ? cur+1 : cur-1);
+            }, {passive:true});
+        }
+        go(0);
+    });
+})();
+</script>
+
+</body>
+</html>
