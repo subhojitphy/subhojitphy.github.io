@@ -153,47 +153,6 @@
             .theme-grid{grid-template-columns:1fr}
             .paper-plot-container{grid-template-columns:1fr}
         }
-
-
-        /* PAPER SLIDESHOW */
-        .pslide-wrapper{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--card-bg);box-shadow:var(--shadow-md);margin-bottom:2rem}
-        .pslide-track{display:flex;transition:transform .4s cubic-bezier(.4,0,.2,1)}
-        .pslide{min-width:100%;padding:1.8rem 2rem;box-sizing:border-box}
-        .pslide .paper-entry-title{font-weight:700;font-size:1.05rem;line-height:1.5;color:var(--ink);margin-bottom:.4rem}
-        .pslide .paper-entry-authors{font-size:.84rem;color:var(--muted);margin-bottom:.4rem}
-        .pslide .paper-entry-venue{font-size:.82rem;color:var(--accent-mid);font-style:italic;margin-bottom:.7rem}
-        .pslide .paper-entry-desc{font-size:.92rem;color:#334155;line-height:1.75;margin-bottom:.9rem}
-        .pslide .paper-entry-links{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
-        .pslide .paper-entry-links a{font-size:.72rem;font-weight:500;text-decoration:none;color:var(--accent-mid);padding:3px 10px;border:1px solid var(--border);border-radius:4px;transition:all .2s;font-family:var(--mono)}
-        .pslide .paper-entry-links a:hover{background:var(--highlight);border-color:var(--accent-mid)}
-        .pslide-plots{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;border-top:1px solid var(--border);padding-top:1rem}
-        .pslide-plots img{max-height:220px;max-width:calc(25% - .6rem);min-width:140px;object-fit:contain;border-radius:6px;flex:1}
-        .pslide-nav{display:flex;align-items:center;justify-content:center;gap:.7rem;padding:.8rem 1.5rem;background:var(--highlight);border-top:1px solid var(--border)}
-        .pslide-btn{background:var(--card-bg);border:1px solid var(--border);border-radius:50%;width:2.2rem;height:2.2rem;cursor:pointer;font-size:1rem;color:var(--accent);display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
-        .pslide-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
-        .pslide-btn:disabled{opacity:.3;cursor:default;background:var(--card-bg);color:var(--muted)}
-        .pslide-dots{display:flex;gap:6px;align-items:center}
-        .pslide-dot{width:8px;height:8px;border-radius:50%;background:var(--border);border:none;padding:0;cursor:pointer;transition:all .2s}
-        .pslide-dot.active{background:var(--accent);transform:scale(1.25)}
-        .pslide-counter{font-family:var(--mono);font-size:.75rem;color:var(--muted);min-width:3.5rem;text-align:center;font-weight:500}
-        @media(max-width:768px){
-            .pslide{padding:1.2rem}
-            .pslide-plots img{max-width:calc(50% - .6rem);max-height:160px}
-        }
-
-        /* CAROUSEL */
-        .paper-carousel{position:relative;margin-top:1rem}
-        .carousel-viewport{overflow:hidden;border-radius:10px;background:var(--highlight);border:1px solid var(--border)}
-        .carousel-track{display:flex;transition:transform .35s cubic-bezier(.4,0,.2,1)}
-        .carousel-slide{min-width:100%;display:flex;justify-content:center;align-items:center;padding:.6rem;box-sizing:border-box}
-        .carousel-slide img{max-height:300px;max-width:100%;object-fit:contain;border-radius:6px}
-        .carousel-controls{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-top:.55rem}
-        .carousel-btn{background:var(--card-bg);border:1px solid var(--border);border-radius:50%;width:2rem;height:2rem;cursor:pointer;font-size:.95rem;color:var(--accent);display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;line-height:1}
-        .carousel-btn:hover{background:var(--highlight);border-color:var(--accent)}
-        .carousel-dots{display:flex;gap:5px;align-items:center}
-        .carousel-dot{width:6px;height:6px;border-radius:50%;background:var(--border);border:none;padding:0;cursor:pointer;transition:all .2s}
-        .carousel-dot.active{background:var(--accent);transform:scale(1.3)}
-        .carousel-counter{font-family:var(--mono);font-size:.7rem;color:var(--muted);min-width:3rem;text-align:center}
     </style>
 </head>
 <body>
@@ -222,8 +181,8 @@
 
 <!-- HERO -->
 <section id="about" class="hero">
-    <div class="hero-photo-wrapper">
-        <img src="plots/SR_photo.jpg" class="hero-photo" alt="Subhojit Roy">
+    <img src="plots/SR_photo.jpg" class="hero-photo" alt="Subhojit Roy">
+        <!-- TO ADD YOUR PHOTO: Replace this div with <img src="photo.jpg" class="hero-photo" alt="Subhojit Roy"> -->
     </div>
     <div class="hero-text">
         <h1>Subhojit Roy</h1>
@@ -238,7 +197,7 @@
             I am currently a Postdoctoral Fellow at <a href="https://www.anl.gov" target="_blank">Argonne</a>, working with <a href="https://physics.uchicago.edu/people/profile/carlos-e.-m.-wagner/" target="_blank">Prof. Carlos E.M. Wagner</a>.
         </p>
         <div class="hero-links">
-            <a href="/cdn-cgi/l/email-protection#6d1e1f02142d0c0301430a021b414d1e180f0502190508021f142d0a000c0401430e0200" class="btn-primary">✉ <span class="__cf_email__" data-cfemail="eb98998492ab8a8587c58c849d">[email&#160;protected]</span></a>
+            <a href="mailto:sroy@anl.gov, subhotheory@gmail.com" class="btn-primary">✉ sroy@anl.gov</a>
             <a href="https://inspirehep.net/authors/1835914" target="_blank" class="btn-outline">iNSPIRE</a>
             <a href="https://scholar.google.com/citations?user=bqk4nfUAAAAJ&hl=en" target="_blank" class="btn-outline">Google Scholar</a>
             <a href="https://www.researchgate.net/profile/Subhojit-Roy-3" target="_blank" class="btn-outline">ResearchGate</a>
@@ -310,59 +269,43 @@
             <div class="theme-icon">⚛️</div>
             <h3>Higgs Portal Dark Matter &amp; Baryogenesis &amp; Magnetogenesis</h3>
         </div>
-        <div class="pslide-wrapper" id="ps-higgs">
-            <div class="pslide-track">
-
-                <!-- SLIDE 1 -->
-                <div class="pslide">
-                    <div class="paper-entry-title">Gamma-Rays and Gravitational Waves from Inelastic Higgs Portal Dark Matter</div>
-                    <div class="paper-entry-authors">D. Hooper, G. Krnjaic, D. Rocha, <span class="me">S. Roy</span></div>
-                    <div class="paper-entry-venue">arXiv:2507.22975 [hep-ph]</div>
-                    <div class="paper-entry-desc">We propose a Higgs portal inelastic scalar dark matter model in which a complex singlet splits into quasi-degenerate states, suppressing direct detection and setting the relic abundance via coannihilation while triggering a first-order electroweak phase transition. The same dynamics account for the Galactic-Center gamma-ray excess and yield line-to-continuum gamma-ray spectra testable by Fermi-LAT and CTAO.</div>
-                    <div class="paper-entry-links"><a href="https://arxiv.org/abs/2507.22975" target="_blank">arXiv</a></div>
-                    <div class="pslide-plots">
-                        <img src="plots/inelastic_deltampt1_new4.pdf" alt="Figure 1">
-                        <img src="plots/inelastic_BP1-phi1phi2.pdf" alt="Figure 2">
-                        <img src="plots/inelastic_BP1-h.pdf" alt="Figure 3">
-                        <img src="plots/inelastic_GW-BP_new5.pdf" alt="Figure 4">
-                    </div>
-                </div>
-
-                <!-- SLIDE 2 -->
-                <div class="pslide">
-                    <div class="paper-entry-title">Dark Matter and Electroweak Baryogenesis with Spontaneous CP Violation in the Early Universe</div>
-                    <div class="paper-entry-authors"><span class="me">S. Roy</span></div>
-                    <div class="paper-entry-venue">Phys.Rev.D113(2026)5,055040 &bull; arXiv:2509.19982 [hep-ph]</div>
-                    <div class="paper-entry-desc">I extended the Higgs-portal model with a spontaneously CP-violating dimension-6 operator that simultaneously accommodates electroweak baryogenesis and dark matter while explaining the Galactic Center gamma-ray excess. CP violation occurs only during the electroweak phase transition and switches off afterward, allowing the model to evade stringent electric dipole moment (EDM) constraints.</div>
-                    <div class="paper-entry-links">
-                        <a href="https://arxiv.org/abs/2509.19982" target="_blank">arXiv</a>
-                        <a href="https://link.aps.org/doi/10.1103/4mgy-mp7p" target="_blank">DOI</a>
-                    </div>
-                    <div class="pslide-plots">
-                        <img src="plots/EWBG_BP.png" alt="Figure 1">
-                        <img src="plots/EWBGfield-zlw.png" alt="Figure 2">
-                        <img src="plots/EWBG_mubLTn-ZTn.png" alt="Figure 3">
-                        <img src="plots/EWBG_BP-GW.png" alt="Figure 4">
-                    </div>
-                </div>
-
-                <!-- SLIDE 3 -->
-                <div class="pslide">
-                    <div class="paper-entry-title">Primordial Magnetogenesis from Singlet Extended Higgs-Portal Dark Matter</div>
-                    <div class="paper-entry-authors"><span class="me">S. Roy</span></div>
-                    <div class="paper-entry-venue" style="color:#d97706;font-weight:600;">⏳ Work in progress</div>
-                    <div class="paper-entry-desc">The origin of intergalactic magnetic fields inferred from blazar observations is a long-standing puzzle. We demonstrate that they can arise naturally from bubble collisions during a first-order electroweak phase transition in the Higgs-portal dark matter model, unifying magnetogenesis with dark matter, baryogenesis, and gravitational-wave phenomenology.</div>
-                </div>
-
-            </div>
-            <div class="pslide-nav">
-                <button class="pslide-btn prev" aria-label="Previous">&#8592;</button>
-                <div class="pslide-dots"></div>
-                <span class="pslide-counter"></span>
-                <button class="pslide-btn next" aria-label="Next">&#8594;</button>
-            </div>
+        <div class="paper-entry">
+            <div class="paper-entry-title">Gamma-Rays and Gravitational Waves from Inelastic Higgs Portal Dark Matter</div>
+            <div class="paper-entry-authors">D. Hooper, G. Krnjaic, D. Rocha, <span class="me">S. Roy</span></div>
+            <div class="paper-entry-venue">arXiv:2507.22975 [hep-ph]</div>
+            <div class="paper-entry-desc">We propose a Higgs portal inelastic scalar dark matter model in which a complex singlet splits into quasi-degenerate states, suppressing direct detection and setting the relic abundance via coannihilation while triggering a first-order electroweak phase transition. The same dynamics account for the Galactic-Center gamma-ray excess and yield line-to-continuum gamma-ray spectra testable by Fermi-LAT and CTAO.</div>
+            <div class="paper-entry-links"><a href="https://arxiv.org/abs/2507.22975" target="_blank">arXiv</a></div>
+            <div class="paper-plot-container">
+    <img src="plots/inelastic_deltampt1_new4.pdf" alt="Description" style="max-width:400px; max-height:250px; width:100%;">
+    <img src="plots/inelastic_BP1-phi1phi2.pdf" alt="Description" style="max-width:400px; max-height:204px; width:100%;">
+    <img src="plots/inelastic_BP1-h.pdf" alt="Description" style="max-width:400px; max-height:250px; width:100%;">   
+    <img src="plots/inelastic_GW-BP_new5.pdf" alt="Description" style="max-width:400px; max-height:250px; width:100%;">            
+</div>
         </div>
+        <div class="paper-entry">
+            <div class="paper-entry-title">Dark Matter and Electroweak Baryogenesis with Spontaneous CP Violation in the Early Universe</div>
+            <div class="paper-entry-authors"><span class="me">S. Roy</span></div>
+            <div class="paper-entry-venue">Phys.Rev.D113(2026)5,055040 &bull; arXiv:2509.19982 [hep-ph]</div>
+            <div class="paper-entry-desc">I extended the Higgs-portal model with a spontaneously CP-violating dimension-6 operator that simultaneously accommodates electroweak baryogenesis and dark matter while explaining the Galactic Center gamma-ray excess. CP violation occurs only during the electroweak phase transition and switches off afterward, allowing the model to evade stringent electric dipole moment (EDM) constraints.</div>
+            <div class="paper-entry-links"><a href="https://arxiv.org/abs/2509.19982" target="_blank">arXiv</a>
+            <a href="https://link.aps.org/doi/10.1103/4mgy-mp7p" target="_blank">DOI</a>
+            </div>
+            <div class="paper-plot-container">
+            <div></div> 
+    <img src="plots/EWBG_BP.png" alt="Description" style="max-width:420px; max-height:220px; width:110%;">  
+</div>
+            <div class="paper-plot-container">           
+    <img src="plots/EWBGfield-zlw.png" alt="Description" style="max-width:400px; max-height:250px; width:100%;">
+    <img src="plots/EWBG_mubLTn-ZTn.png" alt="Description" style="max-width:400px; max-height:250px; width:100%;">
+    <img src="plots/EWBG_BP-GW.png" alt="Description" style="max-width:400px; max-height:250px; width:100%;padding: 2px;"> 
+</div>
     </div>
+        <div class="paper-entry">
+    <div class="paper-entry-title">Primordial Magnetogenesis from Singlet Extended Higgs-Portal Dark Matter</div>
+    <div class="paper-entry-authors"><span class="me">S. Roy</span></div>
+    <div class="paper-entry-venue" style="color:#d97706; font-style:normal; font-weight:600;">⏳ Work in progress</div>
+    <div class="paper-entry-desc">The origin of intergalactic magnetic fields inferred from blazar observations is a long-standing puzzle. We demonstrate that they can arise naturally from bubble collisions during a first-order electroweak phase transition in the Higgs-portal dark matter model, unifying magnetogenesis with dark matter, baryogenesis, and gravitational-wave phenomenology.</div>
+</div>
 
     <!-- THEME 2: EWPT -->
     <div class="theme-section" id="theme-ewpt">
@@ -370,95 +313,123 @@
             <div class="theme-icon">🌡️</div>
             <h3>Electroweak Phase Transitions &amp; Thermal Resummation</h3>
         </div>
-        <div class="pslide-wrapper" id="ps-ewpt">
-            <div class="pslide-track">
-
-                <!-- SLIDE 1 -->
-                <div class="pslide">
-                    <div class="paper-entry-title">Self Consistent Thermal Resummation: A Case Study of the Phase Transition in 2HDM</div>
-                    <div class="paper-entry-authors">P. Bittar, <span class="me">S. Roy</span>, C. E. M. Wagner</div>
-                    <div class="paper-entry-venue">JHEP 12 (2025) 021 &bull; arXiv:2504.02024</div>
-                    <div class="paper-entry-desc">For the first time, we implemented the tadpole resummation (partial dressing) scheme in a realistic BSM model — the Two-Higgs-Doublet Model (2HDM). We demonstrated how conventional Arnold-Espinosa and Parwani schemes can produce spurious results such as symmetry non-restoration at very high temperatures. The strength and dynamics of the phase transition, including bubble nucleation, change significantly depending on the resummation scheme. We estimated the resulting theoretical uncertainty in the predicted gravitational-wave signal.</div>
-                    <div class="paper-entry-links">
-                        <a href="https://arxiv.org/abs/2504.02024" target="_blank">arXiv</a>
-                        <a href="https://doi.org/10.1007/JHEP12(2025)021" target="_blank">DOI</a>
-                    </div>
-                    <div class="pslide-plots">
-                        <img src="plots/2HDM_plot_mh_h.pdf" alt="Figure 1">
-                        <img src="plots/2HDM_plot_mHeavyH_h.pdf" alt="Figure 2">
-                        <img src="plots/2HDM_plot_potentials.pdf" alt="Figure 3">
-                        <img src="plots/2HDMgap_Iter.pdf" alt="Figure 4">
-                        <img src="plots/2HDM_plot_mHxmA_v2.pdf" alt="Figure 5">
-                        <img src="plots/2HDM_PD.png" alt="Figure 6">
-                        <img src="plots/2HDM_GW_compare-BP2.png" alt="Figure 7">
-                        <img src="plots/2HDMkappa-lambda_xin_mugamma.png" alt="Figure 8">
-                    </div>
-                </div>
-
-                <!-- SLIDE 2 -->
-                <div class="pslide">
-                    <div class="paper-entry-title">Interplay among gravitational waves, dark matter and collider signals in the singlet scalar extended type-II seesaw model</div>
-                    <div class="paper-entry-authors">P. Ghosh, T. Ghosh, <span class="me">S. Roy</span></div>
-                    <div class="paper-entry-venue">JHEP 10 (2023) 057 &bull; arXiv:2211.15640</div>
-                    <div class="paper-entry-desc">We explored the interplay between dark matter phenomenology, gravitational-wave signals, and collider signatures in the singlet scalar extended type-II seesaw model. We demonstrated that parameter regions favored by a strong first-order EWPT can be probed through measurements of the Higgs di-photon decay rate and self-coupling, providing a coherent multi-observable test of electroweak-scale new physics.</div>
-                    <div class="paper-entry-links">
-                        <a href="https://arxiv.org/abs/2211.15640" target="_blank">arXiv</a>
-                        <a href="https://doi.org/10.1007/JHEP10(2023)057" target="_blank">DOI</a>
-                    </div>
-                    <div class="pslide-plots">
-                        <img src="plots/typeII_BR_1.png" alt="Figure 1">
-                        <img src="plots/typeII_BR_2.png" alt="Figure 2">
-                        <img src="plots/typeII_RAA_1.png" alt="Figure 3">
-                        <img src="plots/typeII_limit1.png" alt="Figure 4">
-                        <img src="plots/typeII_limit2.png" alt="Figure 5">
-                        <img src="plots/typeII_omega1.png" alt="Figure 6">
-                        <img src="plots/typeII_Relic.png" alt="Figure 7">
-                        <img src="plots/typeII_DMPT_strength_LAMBDA_SH.png" alt="Figure 8">
-                        <img src="plots/typeII_bp3_phaseplot_hs.png" alt="Figure 9">
-                        <img src="plots/typeII_bp3_phaseplot_hd.png" alt="Figure 10">
-                        <img src="plots/typeII_BP3_GWplot.png" alt="Figure 11">
-                        <img src="plots/typeII_lambda14Mdeltaalpha.png" alt="Figure 12">
-                        <img src="plots/typeII_lambda14TnMdelta.png" alt="Figure 13">
-                        <img src="plots/typeII_lambda14MdeltabetaHn.png" alt="Figure 14">
-                        <img src="plots/typeII_lambda14Mdeltaxi_n.png" alt="Figure 15">
-                    </div>
-                </div>
-
-                <!-- SLIDE 3 -->
-                <div class="pslide">
-                    <div class="paper-entry-title">Dilution of dark matter relic abundance due to first order electroweak phase transition</div>
-                    <div class="paper-entry-authors"><span class="me">S. Roy</span></div>
-                    <div class="paper-entry-venue">Phys. Rev. D 111 (2025) 015037 &bull; arXiv:2212.11230</div>
-                    <div class="paper-entry-desc">I examined entropy injection during first-order electroweak transitions as a natural mechanism for dark matter relic density dilution. Such dilution can reopen regions of parameter space otherwise excluded by relic density or direct-detection constraints. The dilution factor is directly correlated with the stochastic gravitational-wave signal from the transition.</div>
-                    <div class="paper-entry-links">
-                        <a href="https://arxiv.org/abs/2212.11230" target="_blank">arXiv</a>
-                        <a href="https://doi.org/10.1103/PhysRevD.111.015037" target="_blank">DOI</a>
-                    </div>
-                    <div class="pslide-plots">
-                        <img src="plots/dilution_omega1.png" alt="Figure 1">
-                        <img src="plots/dilution_omega2.png" alt="Figure 2">
-                        <img src="plots/dilution_Tn_d_Tcn.png" alt="Figure 3">
-                        <img src="plots/dilution_Tn_d_xi.png" alt="Figure 4">
-                    </div>
-                </div>
-
-                <!-- SLIDE 4 -->
-                <div class="pslide">
-                    <div class="paper-entry-title">Nano-Hertz Gravitational Waves &amp; Light dark sector</div>
-                    <div class="paper-entry-authors">C. Hauptmann, P. Huang, <span class="me">S. Roy</span></div>
-                    <div class="paper-entry-venue" style="color:#d97706;font-weight:600;">⏳ Work in progress</div>
-                    <div class="paper-entry-desc">Paper under preparation in this theme. Details will be added upon publication. See <a href="#future" style="color:var(--accent-mid)">Future Directions</a> for more.</div>
-                </div>
-
+        <div class="paper-entry">
+            <div class="paper-entry-title">Self Consistent Thermal Resummation: A Case Study of the Phase Transition in 2HDM</div>
+            <div class="paper-entry-authors">P. Bittar, <span class="me">S. Roy</span>, C. E. M. Wagner</div>
+            <div class="paper-entry-venue">JHEP 12 (2025) 021 &bull; arXiv:2504.02024</div>
+            <div class="paper-entry-desc">For the first time, we implemented the tadpole resummation (partial dressing) scheme in a realistic BSM model — the Two-Higgs-Doublet Model (2HDM). We demonstrated how conventional Arnold-Espinosa and Parwani schemes can produce spurious results such as symmetry non-restoration at very high temperatures. The strength and dynamics of the phase transition, including bubble nucleation, change significantly depending on the resummation scheme. We estimated the resulting theoretical uncertainty in the predicted gravitational-wave signal.</div>
+            <div class="paper-entry-links">
+                <a href="https://arxiv.org/abs/2504.02024" target="_blank">arXiv</a>
+                <a href="https://doi.org/10.1007/JHEP12(2025)021" target="_blank">DOI</a>
             </div>
-            <div class="pslide-nav">
-                <button class="pslide-btn prev" aria-label="Previous">&#8592;</button>
-                <div class="pslide-dots"></div>
-                <span class="pslide-counter"></span>
-                <button class="pslide-btn next" aria-label="Next">&#8594;</button>
-            </div>
+            <div class="paper-plot-container">           
+     <img src="plots/2HDM_plot_mh_h.pdf" alt="Description" style="max-width:400px; max-height:400px; width:100%;">
+     <img src="plots/2HDM_plot_mHeavyH_h.pdf" alt="Description" style="max-width:400px; max-height:400px; width:110%;">           
+</div>
+            <div class="paper-plot-container">
+    <img src="plots/2HDM_plot_potentials.pdf" alt="Description" style="max-width:400px; max-height:350px; width:100%;">  
+    <img src="plots/2HDMgap_Iter.pdf" alt="Description" style="max-width:450px; max-height:600px; width:110%;">            
         </div>
+        <div class="paper-plot-container">
+            <img src="plots/2HDM_plot_mHxmA_v2.pdf" alt="Description" style="max-width:400px; max-height:220px; width:100%;">
+    <img src="plots/2HDM_PD.png" alt="Description" style="max-width:400px; max-height:280px; width:100%;">
+    <img src="plots/2HDM_GW_compare-BP2.png" alt="Description" style="max-width:400px; max-height:250px; width:100%;">
+    <img src="plots/2HDMkappa-lambda_xin_mugamma.png" alt="Description" style="max-width:400px; max-height:250px; width:100%;">            
+        </div>
+        <div class="paper-entry">
+            <div class="paper-entry-title">Interplay among gravitational waves, dark matter and collider signals in the singlet scalar extended type-II seesaw model</div>
+            <div class="paper-entry-authors">P. Ghosh, T. Ghosh, <span class="me">S. Roy</span></div>
+            <div class="paper-entry-venue">JHEP 10 (2023) 057 &bull; arXiv:2211.15640</div>
+            <div class="paper-entry-desc">We explored the interplay between dark matter phenomenology, gravitational-wave signals, and collider signatures in the singlet scalar extended type-II seesaw model. We demonstrated that parameter regions favored by a strong first-order EWPT can be probed through measurements of the Higgs di-photon decay rate and self-coupling, providing a coherent multi-observable test of electroweak-scale new physics.</div>
+            <div class="paper-entry-links">
+                <a href="https://arxiv.org/abs/2211.15640" target="_blank">arXiv</a>
+                <a href="https://doi.org/10.1007/JHEP10(2023)057" target="_blank">DOI</a>
+            </div>
+<!-- Row 1: 1 tall plot + 2 medium + 2 limit plots with citation -->
+<div class="paper-plot-container" style="display: flex; flex-wrap: nowrap; width: 100%; align-items: center; gap: 6px; margin-bottom: 10px;">
+    <img src="plots/typeII_BR_1.png" 
+         style="flex: 1.1; min-width: 0; max-height: 300px; object-fit: contain;">
+    <img src="plots/typeII_BR_2.png" 
+         style="flex: 1.1; min-width: 0; max-height: 300px; object-fit: contain;">
+    <img src="plots/typeII_RAA_1.png" 
+         style="flex: 0.9; min-width: 0; max-height: 280px; object-fit: contain;">
+    <!-- ONLY THIS BLOCK CHANGES — wrap the 2 limit plots -->
+    <div style="position: relative; flex: 3.8; min-width: 0; display: flex; gap: 2px; align-items: center;">
+        <img src="plots/typeII_limit1.png" 
+             style="flex: 1; min-width: 0; max-height: 350px; object-fit: contain;">
+        <img src="plots/typeII_limit2.png" 
+             style="flex: 1; min-width: 0; max-height: 350px; object-fit: contain;">
+        <!-- Citation label -->
+        <!-- Citation label -->
+<div style="
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.65rem;
+    background: rgba(255,255,255,0.85);
+    padding: 1px 5px;
+    border-radius: 3px;
+    white-space: nowrap;
+">
+    <a href="https://arxiv.org/pdf/2108.10952" target="_blank" 
+       style="color: #555; text-decoration: none;">
+        arXiv:2108.10952
+    </a>
+</div>
+        </div>
+    <!-- END OF CHANGED BLOCK -->
+</div>
+<!-- Row 2: 1 tall + 4 uniform scatter/phase plots -->
+<div class="paper-plot-container" style="display: flex; flex-wrap: nowrap; width: 100%; align-items: center; gap: 6px; margin-bottom: 10px;">
+    <img src="plots/typeII_omega1.png" 
+         style="flex: 1.06; min-width: 0; max-height: 285px; object-fit: contain;">
+    <img src="plots/typeII_Relic.png" 
+         style="flex: 1.1; min-width: 0; max-height: 280px; object-fit: contain;">
+    <img src="plots/typeII_DMPT_strength_LAMBDA_SH.png" 
+         style="flex: 1; min-width: 0; max-height: 270px; object-fit: contain;">
+    <img src="plots/typeII_bp3_phaseplot_hs.png" 
+         style="flex: 1; min-width: 0; max-height: 270px; object-fit: contain;">
+    <img src="plots/typeII_bp3_phaseplot_hd.png" 
+         style="flex: 1; min-width: 0; max-height: 270px; object-fit: contain;">
+</div>
+<!-- Row 3: 1 tall GW plot + 4 uniform scatter plots -->
+<div class="paper-plot-container" style="display: flex; flex-wrap: nowrap; width: 100%; align-items: center; gap: 6px;">
+    <img src="plots/typeII_BP3_GWplot.png" 
+         style="flex: 1.07; min-width: 0; max-height: 290px; object-fit: contain;">
+    <img src="plots/typeII_lambda14Mdeltaalpha.png" 
+         style="flex: 1.05; min-width: 0; max-height: 280px; object-fit: contain;">
+    <img src="plots/typeII_lambda14TnMdelta.png" 
+         style="flex: 1.05; min-width: 0; max-height: 280px; object-fit: contain;">
+    <img src="plots/typeII_lambda14MdeltabetaHn.png" 
+         style="flex: 1.05; min-width: 0; max-height: 280px; object-fit: contain;">
+    <img src="plots/typeII_lambda14Mdeltaxi_n.png" 
+         style="flex: 1.05; min-width: 0; max-height: 280px; object-fit: contain;">
+</div>
+        </div>
+        <div class="paper-entry">
+            <div class="paper-entry-title">Dilution of dark matter relic abundance due to first order electroweak phase transition</div>
+            <div class="paper-entry-authors"><span class="me">S. Roy</span></div>
+            <div class="paper-entry-venue">Phys. Rev. D 111 (2025) 015037 &bull; arXiv:2212.11230</div>
+            <div class="paper-entry-desc">I examined entropy injection during first-order electroweak transitions as a natural mechanism for dark matter relic density dilution. Such dilution can reopen regions of parameter space otherwise excluded by relic density or direct-detection constraints. The dilution factor is directly correlated with the stochastic gravitational-wave signal from the transition.</div>
+            <div class="paper-entry-links">
+                <a href="https://arxiv.org/abs/2212.11230" target="_blank">arXiv</a>
+                <a href="https://doi.org/10.1103/PhysRevD.111.015037" target="_blank">DOI</a>
+            </div>
+            <div class="paper-plot-container">
+    <img src="plots/dilution_omega1.png" alt="Description" style="max-width:400px; max-height:250px; width:100%;">
+    <img src="plots/dilution_omega2.png" alt="Description" style="max-width:400px; max-height:250px; width:100%;">
+    <img src="plots/dilution_Tn_d_Tcn.png" alt="Description" style="max-width:400px; max-height:250px; width:100%;">   
+    <img src="plots/dilution_Tn_d_xi.png" alt="Description" style="max-width:400px; max-height:250px; width:100%;">            
+</div>
     </div>
+            </div>
+        <div class="paper-entry">
+    <div class="paper-entry-title">Nano-Hertz Gravitational Waves &amp; Light dark sector</div>
+    <div class="paper-entry-authors">C. Hauptmann, P. Huang, <span class="me">S. Roy</span></div>
+    <div class="paper-entry-venue" style="color:#d97706; font-style:normal; font-weight:600;">⏳ Work in progress</div>
+    <div class="paper-entry-desc">Paper under preparation in this theme. Details will be added upon publication. See <a href="#future" style="color:var(--accent-mid)">Future Directions</a> for more.</div>
+</div>
 
     <!-- THEME 3: Collider -->
     <div class="theme-section" id="theme-collider">
@@ -466,172 +437,150 @@
             <div class="theme-icon">🔬</div>
             <h3>BSM &amp; Collider Phenomenology</h3>
         </div>
-        <div class="pslide-wrapper" id="ps-collider">
-            <div class="pslide-track">
-
-                <!-- SLIDE 1 -->
-                <div class="pslide">
-                    <div class="paper-entry-title">Shedding Light on Dark Matter at the LHC with Machine Learning</div>
-                    <div class="paper-entry-authors">E. Arganda, M. de los Rios, A. D. Perez, <span class="me">S. Roy</span>, R. M. Sandá Seoane, C. E. M. Wagner</div>
-                    <div class="paper-entry-venue">arXiv:2509.15121 [hep-ph]</div>
-                    <div class="paper-entry-desc">We explored a compressed spectrum scenario where Higgsinos decay into a singlino-like LSP accompanied by a soft photon. Using a machine-learning–based analysis triggering on a hard ISR jet that enhances the photon's chance to satisfy trigger criteria, we demonstrated the LHC could probe Higgsino masses up to ~300 GeV with mass splittings below 20 GeV.</div>
-                    <div class="paper-entry-links"><a href="https://arxiv.org/abs/2509.15121" target="_blank">arXiv</a></div>
-                    <div class="pslide-plots">
-                        <img src="plots/ML-feynn.png" alt="Figure 1">
-                        <img src="plots/ML_MET_sig_PT_lepton_BPs_z5.pdf" alt="Figure 2">
-                        <img src="plots/ML_pt_photon_mt_photon_BPs_z5.pdf" alt="Figure 3">
-                        <img src="plots/ML_contour_plot_BPI_preliminar_w_statErrors_highLumi_v2.pdf" alt="Figure 4">
-                    </div>
-                </div>
-
-                <!-- SLIDE 2 -->
-                <div class="pslide">
-                    <div class="paper-entry-title">Dark Matter searches with photons at the LHC</div>
-                    <div class="paper-entry-authors"><span class="me">S. Roy</span>, C. E. M. Wagner</div>
-                    <div class="paper-entry-venue">JHEP 04 (2024) 106 &bull; arXiv:2401.08917</div>
-                    <div class="paper-entry-desc">I proposed photon-rich LHC signatures arising in regions of compressed neutralino spectra consistent with dark matter and collider limits. These signatures can explain the ATLAS–CMS reported soft-dilepton excesses and provide a new avenue for probing the dark sector in regions where direct-detection rates are strongly suppressed due to blind-spot conditions from destructive interference.</div>
-                    <div class="paper-entry-links">
-                        <a href="https://arxiv.org/abs/2401.08917" target="_blank">arXiv</a>
-                        <a href="https://doi.org/10.1007/JHEP04(2024)106" target="_blank">DOI</a>
-                    </div>
-                    <div class="pslide-plots">
-                        <img src="plots/DMBlind_delta_21_chi2tochi1gamma_N15.png" alt="Figure 1">
-                        <img src="plots/DMBlind_chi2tochi1gamma_chi3tochi2gamma_N15.png" alt="Figure 2">
-                        <img src="plots/DMBlind_bp4-photon.pdf" alt="Figure 3">
-                        <img src="plots/DMBlind_bp4_wit100gevcut.pdf" alt="Figure 4">
-                    </div>
-                </div>
-
-                <!-- SLIDE 3 -->
-                <div class="pslide">
-                    <div class="paper-entry-title">R-parity violation and 8 TeV four-jet events at the LHC</div>
-                    <div class="paper-entry-authors">P. Bittar, <span class="me">S. Roy</span>, C. E. M. Wagner</div>
-                    <div class="paper-entry-venue">Phys. Rev. D 112, 115030 &bull; arXiv:2509.09062</div>
-                    <div class="paper-entry-desc">We proposed R-parity violating SUSY explanations of the recent CMS multi-jet excess, predicting correlated signatures testable in forthcoming collider runs.</div>
-                    <div class="paper-entry-links">
-                        <a href="https://arxiv.org/abs/2509.09062" target="_blank">arXiv</a>
-                        <a href="https://doi.org/10.1103/PhysRevD.112.115030" target="_blank">DOI</a>
-                    </div>
-                    <div class="pslide-plots">
-                        <img src="plots/8TeV_Figure_012.pdf" alt="Figure 1">
-                        <img src="plots/8TeV_Figure_002-a.pdf" alt="Figure 2">
-                        <img src="plots/8TeV_squarks_2j.pdf" alt="Figure 3">
-                        <img src="plots/8TeV_4j_distribution_new.pdf" alt="Figure 4">
-                    </div>
-                </div>
-
-                <!-- SLIDE 4 -->
-                <div class="pslide">
-                    <div class="paper-entry-title">Testing the lepton content of the proton at HERA and EIC</div>
-                    <div class="paper-entry-authors">L. Da Rold, A. D. Medina, <span class="me">S. Roy</span>, C. E. M. Wagner</div>
-                    <div class="paper-entry-venue">JHEP 01 (2025) 121 &bull; arXiv:2408.12644</div>
-                    <div class="paper-entry-desc">A quark inside the proton can radiate a photon which splits into a lepton pair, giving the proton lepton parton distribution functions (PDFs). We proposed to investigate such effects at HERA and the upcoming Electron-Ion Collider (EIC), focusing on resonant Z-boson and non-resonant dilepton final states as direct probes of the proton's lepton PDFs.</div>
-                    <div class="paper-entry-links">
-                        <a href="https://arxiv.org/abs/2408.12644" target="_blank">arXiv</a>
-                        <a href="https://doi.org/10.1007/JHEP01(2025)121" target="_blank">DOI</a>
-                    </div>
-                    <div class="pslide-plots">
-                        <img src="plots/PDF_proton-pdf_v4.pdf" alt="Figure 1">
-                        <img src="plots/PDF_lepton-pdf.pdf" alt="Figure 2">
-                        <img src="plots/PDF_EJ1J2_HERA.pdf" alt="Figure 3">
-                        <img src="plots/PDF_E_PZ_HERA.pdf" alt="Figure 4">
-                        <img src="plots/PDF_MJ1J2_dijet_HERA.png" alt="Figure 5">
-                    </div>
-                </div>
-
-                <!-- SLIDE 5 -->
-                <div class="pslide">
-                    <div class="paper-entry-title">Hunting ewinos and a light scalar of Z₃-NMSSM with a bino-like dark matter in top squark decays at the LHC</div>
-                    <div class="paper-entry-authors">A. Datta, M. Guchait, A. Roy, <span class="me">S. Roy</span></div>
-                    <div class="paper-entry-venue">JHEP 11 (2023) 081 &bull; arXiv:2211.05905</div>
-                    <div class="paper-entry-desc">We proposed strategies to discover light singlet-like scalars at the LHC through multiple cascade decays of heavy top squarks. Using a multivariate analysis, we estimated that the HL-LHC could achieve a 5σ discovery reach for these signals.</div>
-                    <div class="paper-entry-links">
-                        <a href="https://arxiv.org/abs/2211.05905" target="_blank">arXiv</a>
-                        <a href="https://doi.org/10.1007/JHEP11(2023)081" target="_blank">DOI</a>
-                    </div>
-                    <div class="pslide-plots">
-                        <img src="plots/stop_M1_kappalamba_mueff.png" alt="Figure 1">
-                        <img src="plots/stopBR.png" alt="Figure 2">
-                        <img src="plots/stop_feyn.png" alt="Figure 3">
-                        <img src="plots/stop_mH_05112022.pdf" alt="Figure 4">
-                        <img src="plots/stopmT.pdf" alt="Figure 5">
-                        <img src="plots/stop_sensitivity_bp3_hsm.pdf" alt="Figure 6">
-                        <img src="plots/stop_mjbb_low_bdtbut_09_events.pdf" alt="Figure 7">
-                    </div>
-                </div>
-
-                <!-- SLIDE 6 -->
-                <div class="pslide">
-                    <div class="paper-entry-title">Heavy Neutral Lepton at Same-Sign Muon Collider</div>
-                    <div class="paper-entry-authors">R. Kitano, I. Low, R. Matsudo, S. Okawa, <span class="me">S. Roy</span></div>
-                    <div class="paper-entry-venue">arXiv:2510.18390 [hep-ph]</div>
-                    <div class="paper-entry-desc">We study HNL-mediated signatures at a proposed μ⁺μ⁺ collider: the lepton-flavor-violating channel μ⁺μ⁺ → W⁺τ⁺ν̄<sub>μ</sub> and the lepton-number-violating channel μ⁺μ⁺ → W⁺W⁺ (the muon analogue of inverse neutrinoless double beta decay). At the μTRISTAN collider with √s ~ 𝒪(10) TeV, the sensitivity to HNL mixing can surpass current electroweak precision bounds, improving by an order of magnitude for 5–10 TeV HNLs.</div>
-                    <div class="paper-entry-links"><a href="https://arxiv.org/abs/2510.18390" target="_blank">arXiv</a></div>
-                    <div class="pslide-plots">
-                        <img src="plots/HNL_Feyna.png" alt="Figure 1">
-                        <img src="plots/HNL_ptcutmethod.pdf" alt="Figure 2">
-                        <img src="plots/HNL_MN-UmuUtau.pdf" alt="Figure 3">
-                        <img src="plots/HNL_MN-Umusq.pdf" alt="Figure 4">
-                    </div>
-                </div>
-
-            </div>
-            <div class="pslide-nav">
-                <button class="pslide-btn prev" aria-label="Previous">&#8592;</button>
-                <div class="pslide-dots"></div>
-                <span class="pslide-counter"></span>
-                <button class="pslide-btn next" aria-label="Next">&#8594;</button>
-            </div>
+        <div class="paper-entry">
+            <div class="paper-entry-title">Shedding Light on Dark Matter at the LHC with Machine Learning</div>
+            <div class="paper-entry-authors">E. Arganda, M. de los Rios, A. D. Perez, <span class="me">S. Roy</span>, R. M. Sandá Seoane, C. E. M. Wagner</div>
+            <div class="paper-entry-venue">arXiv:2509.15121 [hep-ph]</div>
+            <div class="paper-entry-desc">We explored a compressed spectrum scenario where Higgsinos decay into a singlino-like LSP accompanied by a soft photon. Using a machine-learning–based analysis triggering on a hard ISR jet that enhances the photon's chance to satisfy trigger criteria, we demonstrated the LHC could probe Higgsino masses up to ~300 GeV with mass splittings below 20 GeV.</div>
+            <div class="paper-entry-links"><a href="https://arxiv.org/abs/2509.15121" target="_blank">arXiv</a></div>
+          <div class="paper-plot-container" style="display: flex; flex-wrap: nowrap; width: 100%; align-items: center; gap: 8px;">
+    <img src="plots/ML-feynn.png" alt="Description" 
+         style="flex: 1.2; min-width: 0; max-height: 230px; object-fit: contain;">
+    <img src="plots/ML_MET_sig_PT_lepton_BPs_z5.pdf" alt="Description" 
+         style="flex: 1.1; min-width: 0; max-height: 230px; object-fit: contain;">
+    <img src="plots/ML_pt_photon_mt_photon_BPs_z5.pdf" alt="Description" 
+         style="flex: 1.1; min-width: 0; max-height: 230px; object-fit: contain;">
+    <img src="plots/ML_contour_plot_BPI_preliminar_w_statErrors_highLumi_v2.pdf" alt="Description" 
+         style="flex: 1.1; min-width: 0; max-height: 220px; object-fit: contain;">
+</div>
         </div>
+        <div class="paper-entry">
+            <div class="paper-entry-title">Dark Matter searches with photons at the LHC</div>
+            <div class="paper-entry-authors"><span class="me">S. Roy</span>, C. E. M. Wagner</div>
+            <div class="paper-entry-venue">JHEP 04 (2024) 106 &bull; arXiv:2401.08917</div>
+            <div class="paper-entry-desc">I proposed photon-rich LHC signatures arising in regions of compressed neutralino spectra consistent with dark matter and collider limits. These signatures can explain the ATLAS–CMS reported soft-dilepton excesses and provide a new avenue for probing the dark sector in regions where direct-detection rates are strongly suppressed due to blind-spot conditions from destructive interference.</div>
+            <div class="paper-entry-links">
+                <a href="https://arxiv.org/abs/2401.08917" target="_blank">arXiv</a>
+                <a href="https://doi.org/10.1007/JHEP04(2024)106" target="_blank">DOI</a></div>
+            <div class="paper-plot-container">
+    <img src="plots/DMBlind_delta_21_chi2tochi1gamma_N15.png" alt="Description" style="max-width:400px; max-height:250px; width:100%;">
+    <img src="plots/DMBlind_chi2tochi1gamma_chi3tochi2gamma_N15.png" alt="Description" style="max-width:400px; max-height:250px; width:100%;">
+    <img src="plots/DMBlind_bp4-photon.pdf" alt="Description" style="max-width:400px; max-height:250px; width:100%;">   
+    <img src="plots/DMBlind_bp4_wit100gevcut.pdf" alt="Description" style="max-width:400px; max-height:250px; width:100%;"> 
+</div>
+  </div>
+        <div class="paper-entry">
+            <div class="paper-entry-title">R-parity violation and 8 TeV four-jet events at the LHC</div>
+            <div class="paper-entry-authors">P. Bittar, <span class="me">S. Roy</span>, C. E. M. Wagner</div>
+            <div class="paper-entry-venue">Phys. Rev. D 112, 115030 &bull; arXiv:2509.09062</div>
+            <div class="paper-entry-desc">We proposed R-parity violating SUSY explanations of the recent CMS multi-jet excess, predicting correlated signatures testable in forthcoming collider runs.</div>
+            <div class="paper-entry-links">
+                <a href="https://arxiv.org/abs/2509.09062" target="_blank">arXiv</a>
+                <a href="https://doi.org/10.1103/PhysRevD.112.115030" target="_blank">DOI</a>
+            </div>
+            <div class="paper-plot-container">
+    <img src="plots/8TeV_Figure_012.pdf" alt="Description" style="max-width:400px; max-height:250px; width:100%;">
+    <img src="plots/8TeV_Figure_002-a.pdf" alt="Description" style="max-width:400px; max-height:250px; width:100%;">
+    <img src="plots/8TeV_squarks_2j.pdf" alt="Description" style="max-width:400px; max-height:250px; width:100%;">   
+    <img src="plots/8TeV_4j_distribution_new.pdf" alt="Description" style="max-width:400px; max-height:250px; width:100%;"> 
+</div>
+             </div>
+        <div class="paper-entry">
+            <div class="paper-entry-title">Testing the lepton content of the proton at HERA and EIC</div>
+            <div class="paper-entry-authors">L. Da Rold, A. D. Medina, <span class="me">S. Roy</span>, C. E. M. Wagner</div>
+            <div class="paper-entry-venue">JHEP 01 (2025) 121 &bull; arXiv:2408.12644</div>
+            <div class="paper-entry-desc">A quark inside the proton can radiate a photon which splits into a lepton pair, giving the proton lepton parton distribution functions (PDFs). We proposed to investigate such effects at HERA and the upcoming Electron-Ion Collider (EIC), focusing on resonant Z-boson and non-resonant dilepton final states as direct probes of the proton's lepton PDFs.</div>
+            <div class="paper-entry-links">
+                <a href="https://arxiv.org/abs/2408.12644" target="_blank">arXiv</a>
+                <a href="https://doi.org/10.1007/JHEP01(2025)121" target="_blank">DOI</a>
+            </div>
+<div class="paper-plot-container" style="display: flex; flex-wrap: nowrap;">
+    <img src="plots/PDF_proton-pdf_v4.pdf" alt="Description" style="max-width:300px; max-height:250px; width:19%;">
+    <img src="plots/PDF_lepton-pdf.pdf" alt="Description" style="max-width:300px; max-height:250px; width:19%;">
+    <img src="plots/PDF_EJ1J2_HERA.pdf" alt="Description" style="max-width:300px; max-height:250px; width:19%;">
+    <img src="plots/PDF_E_PZ_HERA.pdf" alt="Description" style="max-width:300px; max-height:250px; width:19%;">
+    <img src="plots/PDF_MJ1J2_dijet_HERA.png" alt="Description" style="max-width:300px; max-height:250px; width:20%;">
+</div>
+</div>
+        <div class="paper-entry">
+            <div class="paper-entry-title">Hunting ewinos and a light scalar of Z₃-NMSSM with a bino-like dark matter in top squark decays at the LHC</div>
+            <div class="paper-entry-authors">A. Datta, M. Guchait, A. Roy, <span class="me">S. Roy</span></div>
+            <div class="paper-entry-venue">JHEP 11 (2023) 081 &bull; arXiv:2211.05905</div>
+            <div class="paper-entry-desc">We proposed strategies to discover light singlet-like scalars at the LHC through multiple cascade decays of heavy top squarks. Using a multivariate analysis, we estimated that the HL-LHC could achieve a 5σ discovery reach for these signals.</div>
+            <div class="paper-entry-links">
+                <a href="https://arxiv.org/abs/2211.05905" target="_blank">arXiv</a>
+                <a href="https://doi.org/10.1007/JHEP11(2023)081" target="_blank">DOI</a>
+            </div>
+            <div class="paper-plot-container" style="display: flex; flex-wrap: nowrap; width: 100%; align-items: center; gap: 8px;">
+    <img src="plots/stop_M1_kappalamba_mueff.png" alt="Description" 
+         style="flex: 1; min-width: 0; max-height: 280px; object-fit: contain;">
+    <img src="plots/stopBR.png" alt="Description" 
+         style="flex: 1; min-width: 0; max-height: 280px; object-fit: contain;">
+    <img src="plots/stop_feyn.png" alt="Description" 
+         style="flex: 1.8; min-width: 0; max-height: 320px; object-fit: contain;">
+</div>
+<div class="paper-plot-container" style="display: flex; flex-wrap: nowrap; width: 100%; align-items: center; gap: 8px; margin-top: 12px;">
+    <img src="plots/stop_mH_05112022.pdf" alt="Description" 
+         style="flex: 1; min-width: 0; max-height: 250px; object-fit: contain;">
+    <img src="plots/stopmT.pdf" alt="Description" 
+         style="flex: 1; min-width: 0; max-height: 250px; object-fit: contain;">
+    <img src="plots/stop_sensitivity_bp3_hsm.pdf" alt="Description" 
+         style="flex: 1; min-width: 0; max-height: 250px; object-fit: contain;">
+    <img src="plots/stop_mjbb_low_bdtbut_09_events.pdf" alt="Description" 
+         style="flex: 1; min-width: 0; max-height: 250px; object-fit: contain;">
+</div>
+            </div>
+        <div class="paper-entry">
+            <div class="paper-entry-title">Heavy Neutral Lepton at Same-Sign Muon Collider</div>
+            <div class="paper-entry-authors">R. Kitano, I. Low, R. Matsudo, S. Okawa, <span class="me">S. Roy</span></div>
+            <div class="paper-entry-venue">arXiv:2510.18390 [hep-ph]</div>
+            <div class="paper-entry-desc">We study HNL-mediated signatures at a proposed μ⁺μ⁺ collider: the lepton-flavor-violating channel μ⁺μ⁺ → W⁺τ⁺ν̄<sub>μ</sub> and the lepton-number-violating channel μ⁺μ⁺ → W⁺W⁺ (the muon analogue of inverse neutrinoless double beta decay). At the μTRISTAN collider with √s ~ 𝒪(10) TeV, the sensitivity to HNL mixing can surpass current electroweak precision bounds, improving by an order of magnitude for 5–10 TeV HNLs.</div>
+            <div class="paper-entry-links"><a href="https://arxiv.org/abs/2510.18390" target="_blank">arXiv</a></div>
+            <div class="paper-plot-container" style="display: flex; flex-wrap: nowrap; width: 100%; align-items: center;">
+    <img src="plots/HNL_Feyna.png" alt="Description" style="flex: 1.6; min-width: 0; width: 25%; max-height: 350px; object-fit: contain;">
+    <img src="plots/HNL_ptcutmethod.pdf" alt="Description" style="flex: 1; min-width: 0; width: 25%; max-height: 250px; object-fit: contain;">
+    <img src="plots/HNL_MN-UmuUtau.pdf" alt="Description" style="flex: 1; min-width: 0; width: 25%; max-height: 250px; object-fit: contain;">
+    <img src="plots/HNL_MN-Umusq.pdf" alt="Description" style="flex: 1; min-width: 0; width: 25%; max-height: 250px; object-fit: contain;">
+</div>
     </div>
-
+    </div>
     <!-- THEME 4: Neutrinos -->
     <div class="theme-section" id="theme-neutrino">
         <div class="theme-section-header">
             <div class="theme-icon">🔭</div>
             <h3>Neutrino Physics &amp; Anomalies</h3>
         </div>
-        <div class="pslide-wrapper" id="ps-neutrino">
-            <div class="pslide-track">
+        <div class="paper-entry">
+            <div class="paper-entry-title">A 17 MeV pseudoscalar and the LSND, MiniBooNE and ATOMKI anomalies</div>
+            <div class="paper-entry-authors">W. Abdallah, R. Gandhi, T. Ghosh, N. Khan, S. Roy, <span class="me">S. Roy</span></div>
+            <div class="paper-entry-venue">JHEP 10 (2024) 086 &bull; arXiv:2406.07643</div>
+            <div class="paper-entry-desc">We proposed a 2HDM + singlet-like pseudoscalar and sterile neutrinos scenario where beam ν<sub>μ</sub> scatter incoherently off nuclei to produce heavy neutral leptons that decay into lighter neutrinos and a pseudoscalar yielding e⁺e⁻ pairs. A 17 MeV pseudoscalar can also explain the ATOMKI anomaly, providing a unified origin for multiple low-energy excesses. The MicroBooNE Collaboration recently cited this work in their latest analysis as a viable explanation.</div>
+            <div class="paper-entry-links">
+                <a href="https://arxiv.org/abs/2406.07643" target="_blank">arXiv</a>
+                <a href="https://doi.org/10.1007/JHEP10(2024)086" target="_blank">DOI</a>
+<div class="paper-plot-container" style="display: flex; flex-wrap: nowrap; width: 100%; align-items: center;">
+    <img src="plots/17_angular_plots.pdf" alt="Description" style="flex: 1; min-width: 0; width: 25%; max-height: 250px; object-fit: contain;">
+    <img src="plots/17_MB_ang_120_70.pdf" alt="Description" style="flex: 1; min-width: 0; width: 25%; max-height: 250px; object-fit: contain;">
+    <img src="plots/17_energy-LSND_120_70.pdf" alt="Description" style="flex: 1; min-width: 0; width: 25%; max-height: 250px; object-fit: contain;">
+    <img src="plots/17_angular_plots.pdf" alt="Description" style="flex: 1; min-width: 0; width: 25%; max-height: 250px; object-fit: contain;">
+</div>
 
-                <!-- SLIDE 1 -->
-                <div class="pslide">
-                    <div class="paper-entry-title">A 17 MeV pseudoscalar and the LSND, MiniBooNE and ATOMKI anomalies</div>
-                    <div class="paper-entry-authors">W. Abdallah, R. Gandhi, T. Ghosh, N. Khan, S. Roy, <span class="me">S. Roy</span></div>
-                    <div class="paper-entry-venue">JHEP 10 (2024) 086 &bull; arXiv:2406.07643</div>
-                    <div class="paper-entry-desc">We proposed a 2HDM + singlet-like pseudoscalar and sterile neutrinos scenario where beam ν<sub>μ</sub> scatter incoherently off nuclei to produce heavy neutral leptons that decay into lighter neutrinos and a pseudoscalar yielding e⁺e⁻ pairs. A 17 MeV pseudoscalar can also explain the ATOMKI anomaly, providing a unified origin for multiple low-energy excesses. The MicroBooNE Collaboration recently cited this work in their latest analysis as a viable explanation.</div>
-                    <div class="paper-entry-links">
-                        <a href="https://arxiv.org/abs/2406.07643" target="_blank">arXiv</a>
-                        <a href="https://doi.org/10.1007/JHEP10(2024)086" target="_blank">DOI</a>
-                    </div>
-                    <div class="pslide-plots">
-                        <img src="plots/17_angular_plots.pdf" alt="Figure 1">
-                        <img src="plots/17_MB_ang_120_70.pdf" alt="Figure 2">
-                        <img src="plots/17_energy-LSND_120_70.pdf" alt="Figure 3">
-                        <img src="plots/17_MB-LSND-Feyn-Diag.png" alt="Figure 4">
-                        <img src="plots/17_STUBound1.pdf" alt="Figure 5">
-                        <img src="plots/17_PlotBRkm5.png" alt="Figure 6">
-                        <img src="plots/17_PlotBRkm6.png" alt="Figure 7">
-                    </div>
-                </div>
-
-                <!-- SLIDE 2 -->
-                <div class="pslide">
-                    <div class="paper-entry-title">Vanishing Neutrino Masses &amp; Accidental Lepton Number Conservation</div>
-                    <div class="paper-entry-authors">T. Han, A. Ibara, <span class="me">S. Roy</span>, M. Sabova</div>
-                    <div class="paper-entry-venue" style="color:#d97706;font-weight:600;">⏳ Work in progress</div>
-                    <div class="paper-entry-desc">Paper under preparation in this theme. Details will be added upon publication. See <a href="#future" style="color:var(--accent-mid)">Future Directions</a> for more.</div>
-                </div>
-
-            </div>
-            <div class="pslide-nav">
-                <button class="pslide-btn prev" aria-label="Previous">&#8592;</button>
-                <div class="pslide-dots"></div>
-                <span class="pslide-counter"></span>
-                <button class="pslide-btn next" aria-label="Next">&#8594;</button>
+<div class="paper-plot-container" style="display: flex; flex-wrap: nowrap; width: 100%; align-items: center;">
+    <img src="plots/17_MB-LSND-Feyn-Diag.png" alt="Description" style="flex: 1; min-width: 0; width: 25%; max-height: 250px; object-fit: contain;">
+    <img src="plots/17_STUBound1.pdf" alt="Description" style="flex: 1; min-width: 0; width: 25%; max-height: 250px; object-fit: contain;">
+    <img src="plots/17_PlotBRkm5.png" alt="Description" style="flex: 1; min-width: 0; width: 25%; max-height: 250px; object-fit: contain;">
+    <img src="plots/17_PlotBRkm6.png" alt="Description" style="flex: 1; min-width: 0; width: 25%; max-height: 250px; object-fit: contain;">
+</div>
+    </div>
             </div>
         </div>
-    </div>
+            </div>
+        <div class="paper-entry">
+    <div class="paper-entry-title">Vanishing Neutrino Masses &amp; Accidental Lepton Number Conservation</div>
+    <div class="paper-entry-authors">T. Han, A. Ibara, <span class="me">S. Roy</span>, M. Sabova</span></div>
+    <div class="paper-entry-venue" style="color:#d97706; font-style:normal; font-weight:600;">⏳ Work in progress</div>
+    <div class="paper-entry-desc">Paper under preparation in this theme. Details will be added upon publication. See <a href="#future" style="color:var(--accent-mid)">Future Directions</a> for more.</div>
+</div>
 
     <!-- THEME 5: Cosmology -->
     <div class="theme-section" id="theme-cosmo">
@@ -650,63 +599,65 @@
             <div class="theme-icon">✨</div>
             <h3>NMSSM Dark Matter &amp; Phase Transitions</h3>
         </div>
-        <div class="pslide-wrapper" id="ps-susy">
-            <div class="pslide-track">
-
-                <!-- SLIDE 1 -->
-                <div class="pslide">
-                    <div class="paper-entry-title">Electroweak phase transition in the Z₃-invariant NMSSM: Implications of LHC and Dark matter searches and prospects of detecting the gravitational waves</div>
-                    <div class="paper-entry-authors">A. Chatterjee, A. Datta, <span class="me">S. Roy</span></div>
-                    <div class="paper-entry-venue">JHEP 06 (2022) 108 &bull; arXiv:2202.12476</div>
-                    <div class="paper-entry-desc">We studied the electroweak phase transition in the Z₃-invariant NMSSM, demonstrating the interplay between LHC searches, dark matter constraints, and prospects for detecting gravitational waves from a strong first-order phase transition in this framework.</div>
-                    <div class="paper-entry-links">
-                        <a href="https://arxiv.org/abs/2202.12476" target="_blank">arXiv</a>
-                        <a href="https://doi.org/10.1007/JHEP06(2022)108" target="_blank">DOI</a>
-                    </div>
-                    <div class="pslide-plots">
-                        <img src="plots/nmssm_mu_chi1_N11sq.png" alt="Figure 1">
-                        <img src="plots/nmssm_S-H_BPA4.png" alt="Figure 2">
-                        <img src="plots/nmssmH-S_BPA4.png" alt="Figure 3">
-                        <img src="plots/nmssm_BM-A4_GW.png" alt="Figure 4">
-                    </div>
-                </div>
-
-                <!-- SLIDE 2 -->
-                <div class="pslide">
-                    <div class="paper-entry-title">A relatively light, highly bino-like dark matter in the Z₃-symmetric NMSSM and recent LHC searches</div>
-                    <div class="paper-entry-authors">W. Abdallah, A. Datta, <span class="me">S. Roy</span></div>
-                    <div class="paper-entry-venue">JHEP 04 (2021) 122 &bull; arXiv:2012.04026</div>
-                    <div class="paper-entry-desc">We identified direct-detection blind-spot conditions for bino-like dark matter arising from destructive interference among Feynman diagrams. In these regions where direct-detection rates are strongly suppressed, we proposed probing the dark sector through collider signatures instead, exploring the implications for recent LHC searches.</div>
-                    <div class="paper-entry-links">
-                        <a href="https://arxiv.org/abs/2012.04026" target="_blank">arXiv</a>
-                        <a href="https://doi.org/10.1007/JHEP04(2021)122" target="_blank">DOI</a>
-                    </div>
-                    <div class="pslide-plots">
-                        <img src="plots/nmssmblind_mchi1-mas-OMG.png" alt="Figure 1">
-                        <img src="plots/nmssmblind_sumrule_eq.png" alt="Figure 2">
-                        <img src="plots/nmssmblind_chi2decay.png" alt="Figure 3">
-                        <img src="plots/nmssmblind_chi4decay.png" alt="Figure 4">
-                        <img src="plots/nmssmblind_mchi1dmus2beta-sigmaSIntotal-lambda.png" alt="Figure 5">
-                        <img src="plots/nmssmblind_BSC-sigmaSInhSM-lambda.png" alt="Figure 6">
-                        <img src="plots/nmssmblind_lambda-BS-tanbeta-nmssm.png" alt="Figure 7">
-                        <img src="plots/nmssmblind_sigmaSInH-sigmaSInhSM-sigmaSInhs.png" alt="Figure 8">
-                        <img src="plots/nmssmblind_mchi1-sigmaSIntotal-lambda.png" alt="Figure 9">
-                        <img src="plots/nmssmblind_mchi1-sigmaSDn-lambda.png" alt="Figure 10">
-                        <img src="plots/nmssmblind_lambda-BRC3C2ZhSM-mchi3mmchi2.png" alt="Figure 11">
-                        <img src="plots/nmssmblind_mchi1-DeltaZ-mu.png" alt="Figure 12">
-                    </div>
-                </div>
-
+        <div class="paper-entry">
+            <div class="paper-entry-title">Electroweak phase transition in the Z₃-invariant NMSSM: Implications of LHC and Dark matter searches and prospects of detecting the gravitational waves</div>
+            <div class="paper-entry-authors">A. Chatterjee, A. Datta, <span class="me">S. Roy</span></div>
+            <div class="paper-entry-venue">JHEP 06 (2022) 108 &bull; arXiv:2202.12476</div>
+            <div class="paper-entry-desc">We studied the electroweak phase transition in the Z₃-invariant NMSSM, demonstrating the interplay between LHC searches, dark matter constraints, and prospects for detecting gravitational waves from a strong first-order phase transition in this framework.</div>
+            <div class="paper-entry-links">
+                <a href="https://arxiv.org/abs/2202.12476" target="_blank">arXiv</a>
+                <a href="https://doi.org/10.1007/JHEP06(2022)108" target="_blank">DOI</a>
             </div>
-            <div class="pslide-nav">
-                <button class="pslide-btn prev" aria-label="Previous">&#8592;</button>
-                <div class="pslide-dots"></div>
-                <span class="pslide-counter"></span>
-                <button class="pslide-btn next" aria-label="Next">&#8594;</button>
+            <div class="paper-plot-container" style="display: flex; flex-wrap: nowrap; width: 100%; align-items: center;">
+    <img src="plots/nmssm_mu_chi1_N11sq.png" alt="Description" style="flex: 1.0; min-width: 0; width: 25%; max-height: 250px; object-fit: contain;">
+    <img src="plots/nmssm_S-H_BPA4.png" alt="Description" style="flex: 1; min-width: 0; width: 25%; max-height: 250px; object-fit: contain;">
+    <img src="plots/nmssmH-S_BPA4.png" alt="Description" style="flex: 1; min-width: 0; width: 25%; max-height: 250px; object-fit: contain;">
+    <img src="plots/nmssm_BM-A4_GW.png" alt="Description" style="flex: 1; min-width: 0; width: 25%; max-height: 250px; object-fit: contain;">
+</div>
             </div>
-        </div>
+           <div class="paper-entry">
+            <div class="paper-entry-title">A relatively light, highly bino-like dark matter in the Z₃-symmetric NMSSM and recent LHC searches</div>
+            <div class="paper-entry-authors">W. Abdallah, A. Datta, <span class="me">S. Roy</span></div>
+            <div class="paper-entry-venue">JHEP 04 (2021) 122 &bull; arXiv:2012.04026</div>
+            <div class="paper-entry-desc">We identified direct-detection blind-spot conditions for bino-like dark matter arising from destructive interference among Feynman diagrams. In these regions where direct-detection rates are strongly suppressed, we proposed probing the dark sector through collider signatures instead, exploring the implications for recent LHC searches.</div>
+            <div class="paper-entry-links">
+                <a href="https://arxiv.org/abs/2012.04026" target="_blank">arXiv</a>
+                <a href="https://doi.org/10.1007/JHEP04(2021)122" target="_blank">DOI</a>
+            </div>
+            <!-- Row 1: 2 scatter plots + 2 ternary plots (taller) -->
+<div class="paper-plot-container" style="display: flex; flex-wrap: nowrap; width: 100%; align-items: center; gap: 6px; margin-bottom: 10px;">
+    <img src="plots/nmssmblind_mchi1-mas-OMG.png" 
+         style="flex: 1.2; min-width: 0; max-height: 260px; object-fit: contain;">
+    <img src="plots/nmssmblind_sumrule_eq.png" 
+         style="flex: 1.2; min-width: 0; max-height: 260px; object-fit: contain;">
+    <img src="plots/nmssmblind_chi2decay.png" 
+         style="flex: 0.8; min-width: 0; max-height: 260px; object-fit: contain;">
+    <img src="plots/nmssmblind_chi4decay.png" 
+         style="flex: 0.8; min-width: 0; max-height: 260px; object-fit: contain;">
+</div>
+<!-- Row 2: 4 scatter plots, uniform -->
+<div class="paper-plot-container" style="display: flex; flex-wrap: nowrap; width: 100%; align-items: center; gap: 6px; margin-bottom: 10px;">
+    <img src="plots/nmssmblind_mchi1dmus2beta-sigmaSIntotal-lambda.png" 
+         style="flex: 1; min-width: 0; max-height: 260px; object-fit: contain;">
+    <img src="plots/nmssmblind_BSC-sigmaSInhSM-lambda.png" 
+         style="flex: 1; min-width: 0; max-height: 260px; object-fit: contain;">
+    <img src="plots/nmssmblind_lambda-BS-tanbeta-nmssm.png" 
+         style="flex: 1; min-width: 0; max-height: 260px; object-fit: contain;">
+    <img src="plots/nmssmblind_sigmaSInH-sigmaSInhSM-sigmaSInhs.png" 
+         style="flex: 1; min-width: 0; max-height: 260px; object-fit: contain;">
+</div>
+<!-- Row 3: 4 scatter plots, uniform -->
+<div class="paper-plot-container" style="display: flex; flex-wrap: nowrap; width: 100%; align-items: center; gap: 6px;">
+    <img src="plots/nmssmblind_mchi1-sigmaSIntotal-lambda.png" 
+         style="flex: 1; min-width: 0; max-height: 260px; object-fit: contain;">
+    <img src="plots/nmssmblind_mchi1-sigmaSDn-lambda.png" 
+         style="flex: 1; min-width: 0; max-height: 260px; object-fit: contain;">
+    <img src="plots/nmssmblind_lambda-BRC3C2ZhSM-mchi3mmchi2.png" 
+         style="flex: 1; min-width: 0; max-height: 260px; object-fit: contain;">
+    <img src="plots/nmssmblind_mchi1-DeltaZ-mu.png" 
+         style="flex: 1; min-width: 0; max-height: 260px; object-fit: contain;">
+</div>
     </div>
-
 </section>
 
 <hr class="divider">
@@ -818,7 +769,7 @@
         <div class="contact-info">
             <div class="contact-block">
                 <div class="contact-label">Email</div>
-                <p><a href="/cdn-cgi/l/email-protection#7102031e0831101f1d5f161e07"><span class="__cf_email__" data-cfemail="d9aaabb6a099b8b7b5f7beb6af">[email&#160;protected]</span></a><br><a href="/cdn-cgi/l/email-protection#1f6c6a7d77706b777a706d665f78727e7673317c7072"><span class="__cf_email__" data-cfemail="0e7d7b6c66617a666b617c774e69636f6762206d6163">[email&#160;protected]</span></a></p>
+                <p><a href="mailto:sroy@anl.gov">sroy@anl.gov</a><br><a href="mailto:subhotheory@gmail.com">subhotheory@gmail.com</a></p>
             </div>
             <div class="contact-block">
                 <div class="contact-label">Office</div>
@@ -849,114 +800,11 @@
 </footer>
 
 <script>
-    // Navbar scroll effect
-    window.addEventListener('scroll',()=>{
-        document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>10);
-    });
-
-    // Mobile nav close on link click
-    document.querySelectorAll('.nav-links a').forEach(l=>{
-        l.addEventListener('click',()=>{
-            document.querySelector('.nav-links').classList.remove('open');
-        });
-    });
-
-    // Fade-in sections on scroll
-    const observer = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
-    },{threshold:0.08});
+    window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>10)});
+    document.querySelectorAll('.nav-links a').forEach(l=>{l.addEventListener('click',()=>document.querySelector('.nav-links').classList.remove('open'))});
+    const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.08});
     document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
-
-    // Show more talks toggle
-    function toggleTalks(btn){
-        const more = document.getElementById('moreTalks');
-        const hidden = more.style.display==='none'||more.style.display==='';
-        more.style.display = hidden ? 'block' : 'none';
-        btn.textContent = hidden ? 'Show fewer talks ↑' : 'Show more talks ↓';
-    }
+    function toggleTalks(btn){const m=document.getElementById('moreTalks');if(m.style.display==='none'){m.style.display='block';btn.textContent='Show fewer talks \u2191'}else{m.style.display='none';btn.textContent='Show more talks \u2193'}}
 </script>
-<script>
-(function(){
-    document.querySelectorAll('.paper-carousel').forEach(function(car){
-        var track = car.querySelector('.carousel-track');
-        var slides = car.querySelectorAll('.carousel-slide');
-        var dots = car.querySelectorAll('.carousel-dot');
-        var counter = car.querySelector('.carousel-counter');
-        var btnPrev = car.querySelector('.carousel-btn.prev');
-        var btnNext = car.querySelector('.carousel-btn.next');
-        var n = slides.length;
-        var cur = 0;
-        function go(idx){
-            cur = (idx + n) % n;
-            track.style.transform = 'translateX(-' + (cur * 100) + '%)';
-            dots.forEach(function(d,i){ d.classList.toggle('active', i===cur); });
-            if(counter) counter.textContent = (cur+1) + ' / ' + n;
-        }
-        if(btnPrev) btnPrev.addEventListener('click', function(){ go(cur-1); });
-        if(btnNext) btnNext.addEventListener('click', function(){ go(cur+1); });
-        dots.forEach(function(d,i){ d.addEventListener('click', function(){ go(i); }); });
-        var startX = 0;
-        var vp = car.querySelector('.carousel-viewport');
-        if(vp){
-            vp.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive:true});
-            vp.addEventListener('touchend', function(e){
-                var dx = e.changedTouches[0].clientX - startX;
-                if(Math.abs(dx) > 40) go(dx < 0 ? cur+1 : cur-1);
-            }, {passive:true});
-        }
-        go(0);
-    });
-})();
-</script>
-
-
-<script>
-(function(){
-    document.querySelectorAll('.pslide-wrapper').forEach(function(wrapper){
-        var track = wrapper.querySelector('.pslide-track');
-        var slides = wrapper.querySelectorAll('.pslide');
-        var dotContainer = wrapper.querySelector('.pslide-dots');
-        var counter = wrapper.querySelector('.pslide-counter');
-        var btnPrev = wrapper.querySelector('.pslide-btn.prev');
-        var btnNext = wrapper.querySelector('.pslide-btn.next');
-        var n = slides.length;
-        var cur = 0;
-
-        // Build dots
-        for(var i=0;i<n;i++){
-            var d = document.createElement('button');
-            d.className = 'pslide-dot' + (i===0?' active':'');
-            d.setAttribute('aria-label','Paper '+(i+1));
-            d.setAttribute('data-idx',i);
-            dotContainer.appendChild(d);
-        }
-        var dots = dotContainer.querySelectorAll('.pslide-dot');
-
-        function go(idx){
-            cur = (idx+n)%n;
-            track.style.transform='translateX(-'+(cur*100)+'%)';
-            dots.forEach(function(d,i){d.classList.toggle('active',i===cur);});
-            if(counter) counter.textContent=(cur+1)+' / '+n;
-            if(btnPrev) btnPrev.disabled=(n<=1);
-            if(btnNext) btnNext.disabled=(n<=1);
-        }
-
-        if(btnPrev) btnPrev.addEventListener('click',function(){go(cur-1);});
-        if(btnNext) btnNext.addEventListener('click',function(){go(cur+1);});
-        dots.forEach(function(d,i){d.addEventListener('click',function(){go(i);});});
-
-        // Touch swipe
-        var startX=0;
-        wrapper.addEventListener('touchstart',function(e){startX=e.touches[0].clientX;},{passive:true});
-        wrapper.addEventListener('touchend',function(e){
-            var dx=e.changedTouches[0].clientX-startX;
-            if(Math.abs(dx)>40) go(dx<0?cur+1:cur-1);
-        },{passive:true});
-
-        go(0);
-    });
-})();
-</script>
-
 </body>
 </html>
